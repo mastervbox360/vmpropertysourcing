@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>VM Property Sourcing Ltd — Off-Market Property Deals UK</title>
+<meta name="description" content="VM Property Sourcing Ltd connects serious investors with off-market property deals across the UK. BTL, HMO, Flips, SA, BRRR, R2R and Social Housing. Fully compliant, UK-wide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1B3A6B;
+    --navy-deep: #122748;
+    --gold: #C9A84C;
+    --gold-light: #E2C97E;
+    --off-white: #F8F8F5;
+    --charcoal: #2C2C2C;
+    --mid-grey: #6B6B6B;
+    --light-grey: #E8E8E4;
+    --white: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--charcoal);
+    background: var(--off-white);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(27, 58, 107, 0.97);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy-deep) !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy-deep) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy-deep);
+    display: flex;
+    align-items: center;
+    padding: 140px 48px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('');
+    background-size: cover;
+    background-position: center 40%;
+    opacity: 0.18;
+    z-index: 0;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.06) 100%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--off-white));
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.2vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--white);
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 44px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 15px 32px;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    color: rgba(255,255,255,0.8);
+    padding: 15px 32px;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .stat-box {
+    padding: 40px 36px;
+    background: rgba(255,255,255,0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .stat-box:nth-child(even) { background: rgba(255,255,255,0.05); }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 48px; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    font-size: 1rem;
+    color: var(--mid-grey);
+    max-width: 580px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* SERVICES */
+  #services { background: var(--white); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: var(--light-grey);
+    border: 1px solid var(--light-grey);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 0;
+    position: relative;
+    transition: background 0.2s;
+    overflow: hidden;
+  }
+  .service-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    transition: transform 0.4s ease, filter 0.3s ease;
+  }
+  .service-card:hover .service-card-img {
+    transform: scale(1.03);
+    filter: brightness(0.75);
+  }
+  .service-card-body {
+    padding: 36px 40px 40px;
+  }
+
+  .service-card:hover { background: #FAFAF8; }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--navy);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .service-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: var(--mid-grey);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--off-white);
+    padding: 5px 12px;
+    border-radius: 2px;
+    border: 1px solid var(--light-grey);
+  }
+
+  /* WHY VM */
+  #why { background: var(--off-white); }
+  #why .section-inner { position: relative; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .why-points { display: flex; flex-direction: column; gap: 0; }
+
+  .why-point {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--light-grey);
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .why-point:first-child { border-top: 1px solid var(--light-grey); }
+
+  .why-point-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 36px;
+    padding-top: 2px;
+  }
+
+  .why-point h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+
+  .why-point p {
+    font-size: 0.875rem;
+    color: var(--mid-grey);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .compliance-card {
+    background: var(--navy);
+    padding: 48px 44px;
+    border-radius: 4px;
+    position: sticky;
+    top: 100px;
+  }
+
+  .compliance-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .compliance-card > p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .compliance-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .compliance-item:last-of-type { border-bottom: none; }
+
+  .compliance-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .compliance-text { flex: 1; }
+
+  .compliance-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .compliance-text span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  .compliance-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .badge-green { background: rgba(34,197,94,0.15); color: #4ade80; }
+  .badge-pending { background: rgba(201,168,76,0.15); color: var(--gold); }
+
+  /* REGISTER */
+  #register { background: var(--white); }
+
+  .register-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 60px;
+  }
+
+  .register-card {
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .register-card-header {
+    padding: 28px 36px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+
+  .register-card-header.investor { background: var(--navy); }
+  .register-card-header.vendor { background: var(--off-white); }
+
+  .register-card-header.investor h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .register-card-header.investor p { font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 300; }
+
+  .register-card-header.vendor h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .register-card-header.vendor p { font-size: 0.85rem; color: var(--mid-grey); font-weight: 300; }
+
+  .register-card-body { padding: 36px; }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--light-grey);
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    background: var(--off-white);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--navy); background: var(--white); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 8px;
+  }
+
+  .form-submit.investor-submit { background: var(--gold); color: var(--navy-deep); }
+  .form-submit.investor-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .form-submit.vendor-submit { background: var(--navy); color: var(--white); }
+  .form-submit.vendor-submit:hover { background: var(--navy-deep); transform: translateY(-1px); }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: var(--mid-grey);
+    margin-top: 12px;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-deep);
+    padding: 60px 48px 40px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 36px;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .footer-brand span { color: var(--gold); }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 300px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 12px;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-col ul li span {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-legal {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 640px;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    font-weight: 300;
+    white-space: nowrap;
+  }
+
+  /* SUCCESS MESSAGE */
+  .success-msg {
+    display: none;
+    background: rgba(34,197,94,0.1);
+    border: 1px solid rgba(34,197,94,0.3);
+    border-radius: 2px;
+    padding: 16px;
+    font-size: 0.875rem;
+    color: #4ade80;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 72px 24px; }
+    .hero { padding: 120px 24px 80px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 48px; }
+    .register-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 40px; }
+    footer { padding: 48px 24px 32px; }
+    .form-row { grid-template-columns: 1fr; }
+    #partners [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+    /* About section mobile - stack photo above copy */
+    #about [style*="grid-template-columns: 280px 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    /* Credentials strip - stack on mobile */
+    #about [style*="display: flex; gap: 0; align-items: stretch"] { flex-direction: column !important; gap: 24px !important; }
+    #about [style*="width: 1px; background: var(--light-grey)"] { width: 100% !important; height: 1px !important; }
+    #about [style*="flex: 1; padding-right: 40px"] { padding-right: 0 !important; }
+    #about [style*="flex: 1; padding: 0 40px"] { padding: 0 !important; }
+    #about [style*="flex: 1; padding-left: 40px"] { padding-left: 0 !important; }
+    /* Centre the photo on mobile */
+    #about [style*="flex-direction: column; align-items: center"] { width: 100% !important; }
+    .credentials-strip { flex-direction: column !important; gap: 28px !important; }
+    .cred-item { padding: 0 !important; width: 100% !important; }
+    .credentials-strip [style*="width: 1px"] { width: 100% !important; height: 1px !important; flex-shrink: unset !important; }
+    #about img[style*="border-radius: 50%"] { width: 160px !important; height: 160px !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" style="display:flex;align-items:center;">
+    <svg width="170" height="48" viewBox="0 0 170 48" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
+      <!-- Chevron sits tight above VM like a roof on walls -->
+      <polyline points="22,20 38,8 54,20" fill="none" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- VM sits directly under the chevron roof -->
+      <text x="38" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
+      <!-- Divider -->
+      <line x1="70" y1="10" x2="70" y2="44" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <!-- Wordmark -->
+      <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="2.5">PROPERTY</text>
+      <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="2.5">SOURCING</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why VM</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#partners">Co-Source</a></li>
+    <li><a href="#register" class="nav-cta">Register Interest</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">UK Property Deal Sourcing</div>
+      <h1>Before it hits the market.<br><em>That's where we work.</em><br>Found. Packaged. Presented.</h1>
+      <p class="hero-sub">VM Property Sourcing works directly with motivated vendors and landlords to identify off-market property opportunities — and presents them to serious investors with full financial analysis and complete transparency.</p>
+      <div class="hero-actions">
+        <a href="#register" class="btn-primary">Register as Investor</a>
+        <a href="#register" class="btn-secondary">I Have a Property</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Off-Market Only</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="font-size: 2.4rem; letter-spacing: 0.15em;">UK</div>
+        <div class="stat-label">Wide Coverage</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">£0</div>
+        <div class="stat-label">Upfront Fees</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">15+ <span style="font-size:1.4rem;">Yrs</span></div>
+        <div class="stat-label">Commercial Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Services</div>
+      <h2 class="section-title">What we do.</h2>
+      <p class="section-intro">We work on three sides of the property transaction — sourcing deals from motivated vendors, packaging them with rigorous financial analysis, and presenting them to investors who are ready to move.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <img class="service-card-img" src="images/service-investor.png" alt="Investor deal flow analysis" loading="lazy">
+        <div class="service-card-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Investor Deal Flow</h3>
+          <p>Every deal we present is sourced off-market, modelled across multiple strategies and packaged with full financial analysis. You get the information you need to make a clear, considered decision — not a sales pitch.</p>
+          <div class="service-tags">
+            <span class="tag">BTL</span>
+            <span class="tag">HMO</span>
+            <span class="tag">Flip</span>
+            <span class="tag">SA</span>
+            <span class="tag">BRRR</span>
+            <span class="tag">R2R</span>
+            <span class="tag">Social Housing</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card-img" src="images/service-vendor.png" alt="Vendor seller support" loading="lazy">
+        <div class="service-card-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Vendor &amp; Seller Support</h3>
+          <p>We work directly with homeowners, landlords and executors who want a straightforward, discreet route to sale. No listings, no viewings, no delays. We tell you what we can achieve and we follow through.</p>
+          <div class="service-tags">
+            <span class="tag">Off-Market</span>
+            <span class="tag">No Agent Fees</span>
+            <span class="tag">Discreet</span>
+            <span class="tag">Fast</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card-img" src="images/service-landlord.png" alt="Landlord exits restructuring" loading="lazy">
+        <div class="service-card-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Landlord Exits &amp; Restructuring</h3>
+          <p>If you are looking to exit a portfolio, recycle capital or explore rent-to-rent arrangements, we can help you do that quietly and professionally — without disrupting tenancies or exposing your portfolio to the open market.</p>
+          <div class="service-tags">
+            <span class="tag">Portfolio Exit</span>
+            <span class="tag">Discreet Sale</span>
+            <span class="tag">Tenanted</span>
+            <span class="tag">R2R</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VM -->
+<section id="why">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Why VM</div>
+      <h2 class="section-title">Why work with VM.</h2>
+      <p class="section-intro">Property sourcing done properly means being honest about numbers, clear about risk, and consistent in how you operate. That is what we aim for on every deal.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-points reveal">
+        <div class="why-point">
+          <div class="why-point-num">I</div>
+          <div>
+            <h4>Rigorous deal analysis</h4>
+            <p>Every deal is modelled across multiple investment strategies with full financial analysis — cash flow, yield, ROI, break-even occupancy and exit scenarios. You get a clear picture of the opportunity, including where the risks are.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">II</div>
+          <div>
+            <h4>Off-market only</h4>
+            <p>We do not recycle open market listings. Every deal is sourced directly from motivated vendors and landlords before it reaches Rightmove — giving investors access to opportunities that are not available elsewhere.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">III</div>
+          <div>
+            <h4>Straightforward with vendors</h4>
+            <p>We build relationships with sellers and landlords by being honest about what we can do and following through on what we say. That consistency is what generates repeat referrals and reliable deal flow.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-num">IV</div>
+          <div>
+            <h4>Fully compliant operation</h4>
+            <p>VM Property Sourcing Ltd is registered with Companies House, the ICO, HMRC for AML Supervision and The Property Ombudsman redress scheme. We operate within the regulatory framework and put everything in writing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="compliance-card">
+          <h3>Compliance &amp; Registrations</h3>
+          <p>VM Property Sourcing Ltd is a fully regulated property sourcing business.</p>
+          <div class="compliance-item">
+            <div class="compliance-dot"></div>
+            <div class="compliance-text">
+              <strong>Companies House</strong>
+              <span>Company No: 17304521</span>
+            </div>
+            <span class="compliance-badge badge-green">Active</span>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-dot"></div>
+            <div class="compliance-text">
+              <strong>ICO — Data Protection</strong>
+              <span>Ref: ZC183357</span>
+            </div>
+            <span class="compliance-badge badge-green">Registered</span>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-dot"></div>
+            <div class="compliance-text">
+              <strong>HMRC AML Supervision</strong>
+              <span>Estate Agency Business</span>
+            </div>
+            <span class="compliance-badge badge-pending">Pending</span>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-dot"></div>
+            <div class="compliance-text">
+              <strong>The Property Ombudsman</strong>
+              <span>Redress Scheme Member</span>
+            </div>
+            <span class="compliance-badge badge-pending">Pending</span>
+          </div>
+          <div class="compliance-item">
+            <div class="compliance-dot"></div>
+            <div class="compliance-text">
+              <strong>Professional Indemnity</strong>
+              <span>Insurance Cover</span>
+            </div>
+            <span class="compliance-badge badge-pending">Pending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- IMAGE STRIP -->
+<div style="width:100%; height: 340px; overflow: hidden; position: relative;">
+  <div style="position:absolute; inset:0; background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1800&q=80&fit=crop'); background-size:cover; background-position: center 60%; filter: brightness(0.5);"></div>
+  <div style="position:absolute; inset:0; background: linear-gradient(to right, rgba(18,39,72,0.85) 0%, rgba(18,39,72,0.3) 100%);"></div>
+  <div style="position:relative; z-index:1; height:100%; display:flex; align-items:center; padding: 0 48px; max-width:1296px; margin: 0 auto;">
+    <div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight:500; color:var(--white); line-height:1.3; margin-bottom:16px;">Every deal sourced before<br><em style="color:var(--gold); font-style:italic;">it reaches the open market.</em></div>
+      <a href="#register" style="display:inline-block; background:var(--gold); color:var(--navy-deep); padding:12px 28px; font-size:0.85rem; font-weight:600; letter-spacing:0.04em; text-decoration:none; border-radius:2px;">Register Interest</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="background: var(--white); padding: 100px 48px;">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">Meet Videet Mardania.</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 280px 1fr; gap: 64px; margin-top: 60px; align-items: flex-start; max-width: 100%;" class="reveal">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <img src="images/videet-mardania.png" alt="Videet Mardania, Founder of VM Property Sourcing Ltd" style="width: 240px; height: 240px; border-radius: 50%; object-fit: cover; display: block;">
+        <div style="text-align: center;">
+          <div style="font-size: 0.95rem; font-weight: 600; color: var(--navy); letter-spacing: 0.02em;">Videet Mardania</div>
+          <div style="font-size: 0.8rem; color: var(--gold); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px;">Founder</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size: 1.05rem; color: var(--mid-grey); line-height: 1.9; font-weight: 300; margin-bottom: 24px;">
+          We find off-market properties with genuine potential — sourced directly from motivated sellers before they reach the open market, packaged with full financial analysis, and presented to investors ready to move. Occasionally we take on select projects ourselves too.
+        </p>
+        <p style="font-size: 1.05rem; color: var(--mid-grey); line-height: 1.9; font-weight: 300; margin-bottom: 24px;">
+          For vendors and landlords looking for a discreet, straightforward route to sale — no listings, no viewings, no delays — we handle the process professionally from start to finish.
+        </p>
+        <p style="font-size: 1.05rem; color: var(--mid-grey); line-height: 1.9; font-weight: 300;">
+          There is something genuinely satisfying about finding the right deal, for the right person, in the right place — and knowing it changes things. For the investor, for the vendor, for the street the property sits on. That is what makes it worth doing properly.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--light-grey);" class="reveal">
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; font-weight: 500; color: var(--mid-grey); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 32px;">Background &amp; Experience</div>
+      <div class="credentials-strip" style="display: flex; gap: 0; align-items: flex-start; max-width: 100%; overflow: hidden;">
+        <div class="cred-item" style="flex: 1; padding-right: 40px;">
+          <div style="width: 24px; height: 2px; background: var(--gold); margin-bottom: 14px;"></div>
+          <div style="font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">MSc Strategic Procurement Management</div>
+          <div style="font-size: 0.8rem; color: var(--mid-grey); font-weight: 300; line-height: 1.6;">Postgraduate qualification in commercial strategy and supply chain</div>
+        </div>
+        <div style="width: 1px; background: var(--light-grey); align-self: stretch; flex-shrink: 0;"></div>
+        <div class="cred-item" style="flex: 1; padding: 0 40px;">
+          <div style="width: 24px; height: 2px; background: var(--gold); margin-bottom: 14px;"></div>
+          <div style="font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">MCIPS — Chartered Institute of Procurement &amp; Supply</div>
+          <div style="font-size: 0.8rem; color: var(--mid-grey); font-weight: 300; line-height: 1.6;">Chartered membership — the professional standard in commercial practice</div>
+        </div>
+        <div style="width: 1px; background: var(--light-grey); align-self: stretch; flex-shrink: 0;"></div>
+        <div class="cred-item" style="flex: 1; padding-left: 40px;">
+          <div style="width: 24px; height: 2px; background: var(--gold); margin-bottom: 14px;"></div>
+          <div style="font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 6px;">15+ Years Commercial Experience</div>
+          <div style="font-size: 0.8rem; color: var(--mid-grey); font-weight: 300; line-height: 1.6;">Large organisations across public and private sectors in the UK</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CO-SOURCER PARTNERSHIPS -->
+<section id="partners" style="background: var(--navy-deep); padding: 100px 48px;">
+  <div class="section-inner">
+    <div class="reveal" style="max-width: 720px; margin: 0 auto; text-align: center;">
+      <div class="section-eyebrow" style="justify-content: center;">Co-Sourcing</div>
+      <h2 class="section-title" style="color: var(--white);">Co-Sourcing Partnerships.</h2>
+      <p class="section-intro" style="color: rgba(255,255,255,0.6); margin: 0 auto 48px;">We work with other compliant property sourcers on a co-sourcing basis. Whether you have deals but need investors, or investors but need deals — we are open to a conversation. We operate under written agreements, split fees transparently and work only with compliant partners.</p>
+    </div>
+    <div class="reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 60px;">
+      <div style="padding: 36px 32px; background: rgba(255,255,255,0.03);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--gold); margin-bottom: 12px;">You source, we connect</div>
+        <p style="font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.7; font-weight: 300;">You have off-market deals but need access to investors. We will present your deals to our network under a written co-sourcing agreement with an agreed, transparent fee split.</p>
+      </div>
+      <div style="padding: 36px 32px; background: rgba(255,255,255,0.05);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--gold); margin-bottom: 12px;">We source, you connect</div>
+        <p style="font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.7; font-weight: 300;">You have an investor network but need consistent, well-packaged deal flow. We will source, analyse and present deals for your buyers on agreed terms — compliantly and professionally.</p>
+      </div>
+      <div style="padding: 36px 32px; background: rgba(255,255,255,0.03);">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--gold); margin-bottom: 12px;">Referral arrangements</div>
+        <p style="font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.7; font-weight: 300;">If you know a motivated vendor or landlord but do not operate in that area or strategy, we are happy to discuss a referral arrangement. Compensation is agreed in writing before any introduction is made.</p>
+      </div>
+    </div>
+    <!-- CO-SOURCER FORM -->
+    <div class="reveal" style="max-width: 640px; margin: 0 auto; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;">
+      <div style="padding: 28px 36px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--white); margin-bottom: 6px;">Express Interest in Co-Sourcing</h3>
+        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4); font-weight: 300;">All enquiries are treated confidentially. I'll respond within 48 hours.</p>
+      </div>
+      <div style="padding: 36px;">
+        <form id="partner-form" name="co-source-enquiry" data-netlify="true" action="/thank-you" onsubmit="handleSubmit(event, 'partner')">
+          <input type="hidden" name="form-name" value="co-source-enquiry">
+          <div class="form-row">
+            <div class="form-group">
+              <label style="color: rgba(255,255,255,0.6);">First Name</label>
+              <input type="text" name="first_name" placeholder="Alex" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+            </div>
+            <div class="form-group">
+              <label style="color: rgba(255,255,255,0.6);">Last Name</label>
+              <input type="text" name="last_name" placeholder="Patel" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+            </div>
+          </div>
+          <div class="form-group">
+            <label style="color: rgba(255,255,255,0.6);">Business Name</label>
+            <input type="text" name="business_name" placeholder="Your sourcing business name" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+          </div>
+          <div class="form-group">
+            <label style="color: rgba(255,255,255,0.6);">Email Address</label>
+            <input type="email" name="email" placeholder="alex@yourbusiness.co.uk" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+          </div>
+          <div class="form-group">
+            <label style="color: rgba(255,255,255,0.6);">Phone Number</label>
+            <input type="tel" name="phone" placeholder="07700 000000" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+          </div>
+          <div class="form-group">
+            <label style="color: rgba(255,255,255,0.6);">How could we work together?</label>
+            <select name="collaboration_type" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);">
+              <option value="" disabled selected>Select one</option>
+              <option>I have deals, need investor connections</option>
+              <option>I have investors, need deal flow</option>
+              <option>I want to refer a vendor or landlord</option>
+              <option>Other co-sourcing arrangement</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label style="color: rgba(255,255,255,0.6);">Tell us more</label>
+            <textarea name="message" placeholder="Brief overview of your business, the areas you cover and what you are looking for — all treated in strict confidence." style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);"></textarea>
+          </div>
+          <button type="submit" class="form-submit" style="background: var(--gold); color: var(--navy-deep); width: 100%; padding: 14px; border: none; border-radius: 2px; font-family: Inter, sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em; cursor: pointer;">Express Interest</button>
+          <div class="success-msg" id="partner-success" style="background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.3); color: #4ade80;">Thank you — we will be in touch within 48 hours.</div>
+          <p class="form-note" style="color: rgba(255,255,255,0.3);">Your details are held securely under our ICO registration (ZC183357). We only work with compliant sourcers operating under written co-sourcing agreements.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Register Interest</div>
+      <h2 class="section-title">Get in touch.</h2>
+      <p class="section-intro">Whether you are an investor looking for off-market deal flow, or a vendor or landlord ready to explore your options, register below and we will be in touch promptly.</p>
+    </div>
+    <div class="register-grid reveal">
+
+      <!-- INVESTOR FORM -->
+      <div class="register-card">
+        <div class="register-card-header investor">
+          <h3>I'm an Investor</h3>
+          <p>Register your criteria and we will contact you when a suitable off-market opportunity becomes available. No unsolicited calls, no bulk mailouts.</p>
+        </div>
+        <div class="register-card-body">
+          <form id="investor-form" name="investor-registration" data-netlify="true" action="/thank-you" onsubmit="handleSubmit(event, 'investor')">
+          <input type="hidden" name="form-name" value="investor-registration">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="first_name" placeholder="James" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="last_name" placeholder="Wilson" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="james@example.com" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="07700 000000">
+            </div>
+            <div class="form-group">
+              <label>Investment Strategy</label>
+              <select name="strategy" required>
+                <option value="" disabled selected>What is your main strategy?</option>
+                <option>Buy-to-Let (BTL)</option>
+                <option>HMO</option>
+                <option>Flip / Refurbishment</option>
+                <option>Serviced Accommodation (SA)</option>
+                <option>BRRR</option>
+                <option>Rent-to-Rent (R2R)</option>
+                <option>Social Housing / Lease</option>
+                <option>Multiple Strategies</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Budget Range</label>
+              <select name="budget" required>
+                <option value="" disabled selected>What is your typical budget?</option>
+                <option>Under £100,000</option>
+                <option>£100,000 – £200,000</option>
+                <option>£200,000 – £350,000</option>
+                <option>£350,000 – £500,000</option>
+                <option>£500,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Regions</label>
+              <input type="text" name="preferred_regions" placeholder="e.g. South Wales, Midlands, North West">
+            </div>
+            <button type="submit" class="form-submit investor-submit">Register as Investor</button>
+            <div class="success-msg" id="investor-success">Thank you — we will be in touch shortly with relevant opportunities.</div>
+            <p class="form-note">Your details are held securely under our ICO registration (ZC183357) and will only be used to match you with relevant deals. We do not share your information with third parties.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- VENDOR / LANDLORD FORM -->
+      <div class="register-card">
+        <div class="register-card-header vendor">
+          <h3>I Have a Property</h3>
+          <p>Tell us about your situation and we will come back to you honestly about what we can do. All enquiries are treated in strict confidence.</p>
+        </div>
+        <div class="register-card-body">
+          <form id="vendor-form" name="vendor-enquiry" data-netlify="true" action="/thank-you" onsubmit="handleSubmit(event, 'vendor')">
+          <input type="hidden" name="form-name" value="vendor-enquiry">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="first_name" placeholder="Sarah" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="last_name" placeholder="Thompson" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="sarah@example.com" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="07700 000000">
+            </div>
+            <div class="form-group">
+              <label>Property Postcode</label>
+              <input type="text" name="property_postcode" placeholder="e.g. CF24 2LW">
+            </div>
+            <div class="form-group">
+              <label>I am a</label>
+              <select name="vendor_type" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Homeowner looking to sell</option>
+                <option>Landlord looking to exit</option>
+                <option>Landlord open to Rent-to-Rent</option>
+                <option>Executor / Probate</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tell me about your situation</label>
+              <textarea name="message" placeholder="Brief description of the property and your circumstances — all enquiries are treated in strict confidence."></textarea>
+            </div>
+            <button type="submit" class="form-submit vendor-submit">Submit Enquiry</button>
+            <div class="success-msg" id="vendor-success">Thank you — Videet will be in touch within 24 hours.</div>
+            <p class="form-note">All vendor and landlord enquiries are treated in strict confidence. Your property details will never be shared without your express permission.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand" style="margin-bottom:16px;">
+  <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
+    <polyline points="24,24 42,8 60,24" fill="none" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="42" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
+    <line x1="80" y1="12" x2="80" y2="54" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="88" y="33" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="600" fill="#C9A84C" letter-spacing="3">PROPERTY</text>
+    <text x="88" y="47" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="3">SOURCING</text>
+  </svg>
+</div>
+        <p class="footer-desc">VM Property Sourcing Ltd is a UK property deal sourcing business. We work directly with motivated vendors and landlords to source off-market opportunities, and present them to investors with full financial analysis.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:videet@vmpropertysourcing.co.uk">videet@vmpropertysourcing.co.uk</a></li>
+          <li><a href="tel:07966325150">07966 325150</a></li>
+          <li><span>Cardiff, Wales</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Registered Details</h4>
+        <ul>
+          <li><span>VM Property Sourcing Ltd</span></li>
+          <li><span>Company No: 17304521</span></li>
+          <li><span>ICO Ref: ZC183357</span></li>
+          <li><span>Registered in England & Wales</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">VM Property Sourcing Ltd is registered with Companies House (No. 17304521) and the Information Commissioner's Office (ICO Ref: ZC183357). AML Supervision and The Property Ombudsman membership are in progress. VM Property Sourcing Ltd does not provide regulated financial advice. Property investment carries risk and past performance is not a guide to future returns. Sourcing fees are payable on legal completion only.</p>
+      <p class="footer-copy">© 2026 VM Property Sourcing Ltd</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  // Form handler
+  function handleSubmit(e, type) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    })
+    .then(() => {
+      window.location.href = '/thank-you';
+    })
+    .catch((error) => {
+      console.error('Form submission error:', error);
+    });
+  }
+
+  // Nav scroll behaviour
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.padding = '14px 48px';
+    } else {
+      nav.style.padding = '20px 48px';
+    }
+  });
+</script>
+</body>
+</html>
