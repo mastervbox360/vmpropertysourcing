@@ -2,7 +2,7 @@
 //
 // Triggered by Netlify Forms submission webhook.
 // Sends a branded confirmation email to the person who submitted the form,
-// from videet@send.vmpropertysourcing.co.uk via Resend.
+// from enquiries@send.vmpropertysourcing.co.uk via Resend.
 
 exports.handler = async (event) => {
   try {
@@ -75,7 +75,7 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Videet Mardania <videet@send.vmpropertysourcing.co.uk>',
+        from: "VM Property Sourcing Enquiries" <enquiries@send.vmpropertysourcing.co.uk>',
         to: [email],
         subject: subject,
         html: html
