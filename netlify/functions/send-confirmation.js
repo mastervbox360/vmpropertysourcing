@@ -75,7 +75,7 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: "VM Property Sourcing Enquiries" <enquiries@send.vmpropertysourcing.co.uk>',
+        from: 'VM Property Sourcing Enquiries" <enquiries@send.vmpropertysourcing.co.uk>',
         to: [email],
         subject: subject,
         html: html
