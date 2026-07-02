@@ -34,6 +34,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -88,6 +89,182 @@
 
   .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy-deep) !important; }
 
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy-deep);
+    display: flex;
+    align-items: center;
+    padding: 140px 48px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('');
+    background-size: cover;
+    background-position: center 40%;
+    opacity: 0.18;
+    z-index: 0;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.06) 100%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--off-white));
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.2vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--white);
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 44px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 15px 32px;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    color: rgba(255,255,255,0.8);
+    padding: 15px 32px;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .stat-box {
+    padding: 40px 36px;
+    background: rgba(255,255,255,0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .stat-box:nth-child(even) { background: rgba(255,255,255,0.05); }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 48px; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   .section-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -108,12 +285,347 @@
     background: var(--gold);
   }
 
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    font-size: 1rem;
+    color: var(--mid-grey);
+    max-width: 580px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* SERVICES */
+  #services { background: var(--white); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    background: var(--light-grey);
+    border: 1px solid var(--light-grey);
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 0;
+    position: relative;
+    transition: background 0.2s;
+    overflow: hidden;
+  }
+  .service-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    transition: transform 0.4s ease, filter 0.3s ease;
+  }
+  .service-card:hover .service-card-img {
+    transform: scale(1.03);
+    filter: brightness(0.75);
+  }
+  .service-card-body {
+    padding: 36px 40px 40px;
+  }
+
+  .service-card:hover { background: #FAFAF8; }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--navy);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .service-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: var(--mid-grey);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--off-white);
+    padding: 5px 12px;
+    border-radius: 2px;
+    border: 1px solid var(--light-grey);
+  }
+
+  /* WHY VM */
+  #why { background: var(--off-white); }
+  #why .section-inner { position: relative; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .why-points { display: flex; flex-direction: column; gap: 0; }
+
+  .why-point {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--light-grey);
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .why-point:first-child { border-top: 1px solid var(--light-grey); }
+
+  .why-point-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 36px;
+    padding-top: 2px;
+  }
+
+  .why-point h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+
+  .why-point p {
+    font-size: 0.875rem;
+    color: var(--mid-grey);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .compliance-card {
+    background: var(--navy);
+    padding: 48px 44px;
+    border-radius: 4px;
+    position: sticky;
+    top: 100px;
+  }
+
+  .compliance-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .compliance-card > p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .compliance-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .compliance-item:last-of-type { border-bottom: none; }
+
+  .compliance-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .compliance-text { flex: 1; }
+
+  .compliance-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .compliance-text span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  .compliance-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .badge-green { background: rgba(34,197,94,0.15); color: #4ade80; }
+  .badge-pending { background: rgba(201,168,76,0.15); color: var(--gold); }
+
+  /* REGISTER */
+  #register { background: var(--white); }
+
+  .register-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 60px;
+  }
+
+  .register-card {
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .register-card-header {
+    padding: 28px 36px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+
+  .register-card-header.investor { background: var(--navy); }
+  .register-card-header.vendor { background: var(--off-white); }
+
+  .register-card-header.investor h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .register-card-header.investor p { font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 300; }
+
+  .register-card-header.vendor h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .register-card-header.vendor p { font-size: 0.85rem; color: var(--mid-grey); font-weight: 300; }
+
+  .register-card-body { padding: 36px; }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--light-grey);
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    background: var(--off-white);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--navy); background: var(--white); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 8px;
+  }
+
+  .form-submit.investor-submit { background: var(--gold); color: var(--navy-deep); }
+  .form-submit.investor-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .form-submit.vendor-submit { background: var(--navy); color: var(--white); }
+  .form-submit.vendor-submit:hover { background: var(--navy-deep); transform: translateY(-1px); }
+
+  .form-note {
+    font-size: 0.75rem;
+    color: var(--mid-grey);
+    margin-top: 12px;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* FOOTER */
   footer {
     background: var(--navy-deep);
     padding: 60px 48px 40px;
   }
 
-  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
   .footer-top {
     display: grid;
@@ -152,7 +664,10 @@
   }
 
   .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 12px; }
+
+  .footer-col ul li {
+    margin-bottom: 12px;
+  }
 
   .footer-col ul li a {
     font-size: 0.85rem;
@@ -163,7 +678,12 @@
   }
 
   .footer-col ul li a:hover { color: var(--gold); }
-  .footer-col ul li span { font-size: 0.85rem; color: rgba(255,255,255,0.5); font-weight: 300; }
+
+  .footer-col ul li span {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
 
   .footer-bottom {
     display: flex;
@@ -188,11 +708,48 @@
     white-space: nowrap;
   }
 
+  /* SUCCESS MESSAGE */
+  .success-msg {
+    display: none;
+    background: rgba(34,197,94,0.1);
+    border: 1px solid rgba(34,197,94,0.3);
+    border-radius: 2px;
+    padding: 16px;
+    font-size: 0.875rem;
+    color: #4ade80;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
+    section { padding: 72px 24px; }
+    .hero { padding: 120px 24px 80px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 48px; }
+    .register-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; gap: 40px; }
     footer { padding: 48px 24px 32px; }
+    .form-row { grid-template-columns: 1fr; }
+    #partners [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+    #about [style*="grid-template-columns: 280px 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    #about [style*="display: flex; gap: 0; align-items: stretch"] { flex-direction: column !important; gap: 24px !important; }
+    #about [style*="width: 1px; background: var(--light-grey)"] { width: 100% !important; height: 1px !important; }
+    #about [style*="flex: 1; padding-right: 40px"] { padding-right: 0 !important; }
+    #about [style*="flex: 1; padding: 0 40px"] { padding: 0 !important; }
+    #about [style*="flex: 1; padding-left: 40px"] { padding-left: 0 !important; }
+    #about [style*="flex-direction: column; align-items: center"] { width: 100% !important; }
+    .credentials-strip { flex-direction: column !important; gap: 28px !important; }
+    .cred-item { padding: 0 !important; width: 100% !important; }
+    .credentials-strip [style*="width: 1px"] { width: 100% !important; height: 1px !important; flex-shrink: unset !important; }
+    #about img[style*="border-radius: 50%"] { width: 160px !important; height: 160px !important; }
   }
 </style>
 
@@ -201,24 +758,28 @@
 <nav>
   <a href="#" class="nav-logo" style="display:flex;align-items:center;">
     <svg width="170" height="48" viewBox="0 0 170 48" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
+      <!-- Chevron sits tight above VM like a roof on walls -->
       <polyline points="22,20 38,8 54,20" fill="none" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- VM sits directly under the chevron roof -->
       <text x="38" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
+      <!-- Divider -->
       <line x1="70" y1="10" x2="70" y2="44" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <!-- Wordmark -->
       <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="3.5">PROPERTY</text>
       <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="3.5">SOURCING</text>
     </svg>
   </a>
   <ul class="nav-links">
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/#why">Why VM</a></li>
-    <li><a href="/#about">About</a></li>
-    <li><a href="/#partners">Co-Source</a></li>
-    <li><a href="/#register" class="nav-cta">Register Interest</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why VM</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#partners">Co-Source</a></li>
+    <li><a href="#register" class="nav-cta">Register Interest</a></li>
   </ul>
 </nav>
 
 <section style="min-height: 80vh; display: flex; align-items: center; justify-content: center; background: var(--navy-deep); padding: 140px 24px 100px;">
-  <div style="max-width: 600px; text-align: center;">
+  <div style="max-width: 600px; text-align: center;" >
     <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(201,168,76,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 32px;">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="20 6 9 17 4 12"></polyline>
@@ -238,14 +799,14 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand" style="margin-bottom:16px;">
-          <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
-            <polyline points="24,24 42,8 60,24" fill="none" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="42" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
-            <line x1="80" y1="12" x2="80" y2="54" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-            <text x="88" y="33" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="600" fill="#C9A84C" letter-spacing="3.5">PROPERTY</text>
-            <text x="88" y="47" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="3.5">SOURCING</text>
-          </svg>
-        </div>
+  <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
+    <polyline points="24,24 42,8 60,24" fill="none" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="42" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
+    <line x1="80" y1="12" x2="80" y2="54" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="88" y="33" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="600" fill="#C9A84C" letter-spacing="3.5">PROPERTY</text>
+    <text x="88" y="47" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="3.5">SOURCING</text>
+  </svg>
+</div>
         <p class="footer-desc">VM Property Sourcing Ltd is a UK property deal sourcing business. We work directly with motivated vendors and landlords to source off-market opportunities, and present them to investors with full financial analysis.</p>
       </div>
       <div class="footer-col">
