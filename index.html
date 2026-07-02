@@ -738,15 +738,12 @@
     footer { padding: 48px 24px 32px; }
     .form-row { grid-template-columns: 1fr; }
     #partners [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
-    /* About section mobile - stack photo above copy */
     #about [style*="grid-template-columns: 280px 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
-    /* Credentials strip - stack on mobile */
     #about [style*="display: flex; gap: 0; align-items: stretch"] { flex-direction: column !important; gap: 24px !important; }
     #about [style*="width: 1px; background: var(--light-grey)"] { width: 100% !important; height: 1px !important; }
     #about [style*="flex: 1; padding-right: 40px"] { padding-right: 0 !important; }
     #about [style*="flex: 1; padding: 0 40px"] { padding: 0 !important; }
     #about [style*="flex: 1; padding-left: 40px"] { padding-left: 0 !important; }
-    /* Centre the photo on mobile */
     #about [style*="flex-direction: column; align-items: center"] { width: 100% !important; }
     .credentials-strip { flex-direction: column !important; gap: 28px !important; }
     .cred-item { padding: 0 !important; width: 100% !important; }
@@ -761,15 +758,11 @@
 <nav>
   <a href="#" class="nav-logo" style="display:flex;align-items:center;">
     <svg width="170" height="48" viewBox="0 0 170 48" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
-      <!-- Chevron sits tight above VM like a roof on walls -->
       <polyline points="22,20 38,8 54,20" fill="none" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- VM sits directly under the chevron roof -->
       <text x="38" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
-      <!-- Divider -->
       <line x1="70" y1="10" x2="70" y2="44" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-      <!-- Wordmark -->
-      <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="2.5">PROPERTY</text>
-      <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="2.5">SOURCING</text>
+      <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="3.5">PROPERTY</text>
+      <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="3.5">SOURCING</text>
     </svg>
   </a>
   <ul class="nav-links">
@@ -968,8 +961,6 @@
   </div>
 </section>
 
-
-
 <!-- IMAGE STRIP -->
 <div style="width:100%; height: 340px; overflow: hidden; position: relative;">
   <div style="position:absolute; inset:0; background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1800&q=80&fit=crop'); background-size:cover; background-position: center 60%; filter: brightness(0.5);"></div>
@@ -1059,7 +1050,6 @@
         <p style="font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.7; font-weight: 300;">If you know a motivated vendor or landlord but do not operate in that area or strategy, we are happy to discuss a referral arrangement. Compensation is agreed in writing before any introduction is made.</p>
       </div>
     </div>
-    <!-- CO-SOURCER FORM -->
     <div class="reveal" style="max-width: 640px; margin: 0 auto; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden;">
       <div style="padding: 28px 36px; border-bottom: 1px solid rgba(255,255,255,0.08);">
         <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--white); margin-bottom: 6px;">Express Interest in Co-Sourcing</h3>
@@ -1249,14 +1239,14 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand" style="margin-bottom:16px;">
-  <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
-    <polyline points="24,24 42,8 60,24" fill="none" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="42" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
-    <line x1="80" y1="12" x2="80" y2="54" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-    <text x="88" y="33" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="600" fill="#C9A84C" letter-spacing="3">PROPERTY</text>
-    <text x="88" y="47" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="3">SOURCING</text>
-  </svg>
-</div>
+          <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
+            <polyline points="24,24 42,8 60,24" fill="none" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="42" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
+            <line x1="80" y1="12" x2="80" y2="54" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <text x="88" y="33" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="600" fill="#C9A84C" letter-spacing="3.5">PROPERTY</text>
+            <text x="88" y="47" text-anchor="start" font-family="Arial,sans-serif" font-size="8.5" font-weight="400" fill="rgba(255,255,255,0.6)" letter-spacing="3.5">SOURCING</text>
+          </svg>
+        </div>
         <p class="footer-desc">VM Property Sourcing Ltd is a UK property deal sourcing business. We work directly with motivated vendors and landlords to source off-market opportunities, and present them to investors with full financial analysis.</p>
       </div>
       <div class="footer-col">
@@ -1285,7 +1275,6 @@
 </footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -1297,11 +1286,6 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // Smooth nav highlight
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  // Form handler
   function handleSubmit(e, type) {
     e.preventDefault();
     const form = e.target;
@@ -1319,7 +1303,6 @@
     });
   }
 
-  // Nav scroll behaviour
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     if (window.scrollY > 50) {
