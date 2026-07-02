@@ -1,3 +1,4 @@
+
 // netlify/functions/send-confirmation.js
 //
 // Triggered by Netlify Forms submission webhook.
@@ -33,68 +34,76 @@ exports.handler = async (event) => {
  
     const html = `
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
+  <style>
+    :root { color-scheme: light; supported-color-schemes: light; }
+    body { margin: 0 !important; padding: 0 !important; background-color: #F8F8F5 !important; }
+    * { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    @media (prefers-color-scheme: dark) {
+      body { background-color: #F8F8F5 !important; }
+      .email-wrapper { background-color: #F8F8F5 !important; }
+      .header-cell { background-color: #1B3A6B !important; }
+      .gold-bar { background-color: #C9A84C !important; }
+      .body-cell { background-color: #ffffff !important; }
+      .footer-cell { background-color: #F0F0EC !important; }
+      .heading { color: #1B3A6B !important; }
+      .body-text { color: #2C2C2C !important; }
+      .footer-text { color: #8B8B8B !important; }
+      .link { color: #1B3A6B !important; }
+    }
+  </style>
+</head>
 <body style="margin:0; padding:0; background-color:#F8F8F5; font-family: Arial, Helvetica, sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F8F5; padding:40px 0;">
+  <div style="display:none; max-height:0; overflow:hidden;">${subject} — VM Property Sourcing Ltd</div>
+  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F8F5; padding:40px 0;">
     <tr>
       <td align="center">
         <table width="580" cellpadding="0" cellspacing="0" border="0" style="max-width:580px; width:100%;">
  
           <!-- HEADER -->
           <tr>
-            <td style="background-color:#1B3A6B; padding:28px 40px; border-radius:4px 4px 0 0;">
-              <table cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td>
-                    <!-- SVG Logo -->
-                    <svg width="170" height="48" viewBox="0 0 170 48" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
-                      <!-- Chevron -->
-                      <polyline points="22,20 38,8 54,20" fill="none" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                      <!-- VM text -->
-                      <text x="38" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
-                      <!-- Divider -->
-                      <line x1="70" y1="10" x2="70" y2="44" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                      <!-- PROPERTY SOURCING -->
-                      <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="2.5">PROPERTY</text>
-                      <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="2.5">SOURCING</text>
-                    </svg>
-                  </td>
-                </tr>
-              </table>
+            <td class="header-cell" style="background-color:#1B3A6B !important; padding:28px 40px; border-radius:4px 4px 0 0;">
+              <svg width="170" height="48" viewBox="0 0 170 48" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
+                <polyline points="22,20 38,8 54,20" fill="none" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="38" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
+                <line x1="70" y1="10" x2="70" y2="44" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="2.5">PROPERTY</text>
+                <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="2.5">SOURCING</text>
+              </svg>
             </td>
           </tr>
  
           <!-- GOLD ACCENT BAR -->
           <tr>
-            <td style="background-color:#C9A84C; height:3px; font-size:0; line-height:0;">&nbsp;</td>
+            <td class="gold-bar" style="background-color:#C9A84C !important; height:3px; font-size:0; line-height:0;">&nbsp;</td>
           </tr>
  
           <!-- BODY -->
           <tr>
-            <td style="background-color:#ffffff; padding:40px 40px 32px;">
-              <h1 style="font-family: Georgia, 'Times New Roman', serif; font-size:24px; color:#1B3A6B; margin:0 0 20px; font-weight:500; line-height:1.3;">Hi ${firstName},</h1>
-              <p style="font-size:15px; line-height:1.8; color:#2C2C2C; margin:0 0 18px;">${intro}</p>
-              <p style="font-size:15px; line-height:1.8; color:#2C2C2C; margin:0 0 32px;">We review every enquiry personally and will be back in touch shortly. If anything is urgent, you can reach us directly by replying to this email.</p>
- 
-              <!-- DIVIDER -->
+            <td class="body-cell" style="background-color:#ffffff !important; padding:40px 40px 32px;">
+              <h1 class="heading" style="font-family: Georgia, 'Times New Roman', serif; font-size:24px; color:#1B3A6B !important; margin:0 0 20px; font-weight:500; line-height:1.3;">Hi ${firstName},</h1>
+              <p class="body-text" style="font-size:15px; line-height:1.8; color:#2C2C2C !important; margin:0 0 18px;">${intro}</p>
+              <p class="body-text" style="font-size:15px; line-height:1.8; color:#2C2C2C !important; margin:0 0 32px;">We review every enquiry personally and will be back in touch shortly. If anything is urgent, you can reach us directly by replying to this email.</p>
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr><td style="border-top:1px solid #E8E8E4; padding-bottom:24px; font-size:0;">&nbsp;</td></tr>
               </table>
- 
-              <!-- FOOTER INFO -->
-              <p style="font-size:13px; line-height:1.8; color:#6B6B6B; margin:0;">
+              <p class="footer-text" style="font-size:13px; line-height:1.8; color:#6B6B6B !important; margin:0;">
                 VM Property Sourcing Ltd<br>
                 Cardiff, United Kingdom<br>
-                <a href="https://vmpropertysourcing.co.uk" style="color:#1B3A6B; text-decoration:none;">vmpropertysourcing.co.uk</a>
+                <a class="link" href="https://vmpropertysourcing.co.uk" style="color:#1B3A6B !important; text-decoration:none;">vmpropertysourcing.co.uk</a>
               </p>
             </td>
           </tr>
  
           <!-- BOTTOM BAR -->
           <tr>
-            <td style="background-color:#F0F0EC; padding:18px 40px; border-radius:0 0 4px 4px; border-top:1px solid #E8E8E4;">
-              <p style="font-size:11px; color:#8B8B8B; margin:0; text-align:center; line-height:1.6;">
+            <td class="footer-cell" style="background-color:#F0F0EC !important; padding:18px 40px; border-radius:0 0 4px 4px; border-top:1px solid #E8E8E4;">
+              <p class="footer-text" style="font-size:11px; color:#8B8B8B !important; margin:0; text-align:center; line-height:1.6;">
                 VM Property Sourcing Ltd is registered with Companies House (No. 17304521) and the ICO (Ref: ZC183357).
               </p>
             </td>
