@@ -59,7 +59,7 @@ exports.handler = async (event) => {
 </head>
 <body style="margin:0; padding:0; background-color:#F8F8F5; font-family: Arial, Helvetica, sans-serif;">
   <div style="display:none; max-height:0; overflow:hidden;">${subject} — VM Property Sourcing Ltd</div>
-  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F8F5; padding:40px 0;">
+  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F8F5; padding:0 0 40px 0; margin:0;">
     <tr>
       <td align="center">
         <table width="580" cellpadding="0" cellspacing="0" border="0" style="max-width:580px; width:100%;">
