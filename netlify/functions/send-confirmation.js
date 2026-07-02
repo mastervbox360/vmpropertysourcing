@@ -59,14 +59,14 @@ exports.handler = async (event) => {
 </head>
 <body style="margin:0; padding:0; background-color:#F8F8F5; font-family: Arial, Helvetica, sans-serif;">
   <div style="display:none; max-height:0; overflow:hidden;">${subject} — VM Property Sourcing Ltd</div>
-  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F8F5; padding:20px 0 40px 0; margin:0;">
+  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F8F5; padding:0 0 40px 0; margin:0;">
     <tr>
       <td align="center">
-        <table width="580" cellpadding="0" cellspacing="0" border="0" style="max-width:580px; width:100%; border-radius:4px; overflow:hidden; border-collapse:separate;">
+        <table width="580" cellpadding="0" cellspacing="0" border="0" style="max-width:580px; width:100%;">
  
           <!-- HEADER -->
           <tr>
-            <td class="header-cell" style="background-color:#1B3A6B !important; padding:28px 40px; border-radius:4px 4px 0 0;">
+            <td class="header-cell" style="background-color:#1B3A6B !important; padding:18px 40px;">
               <svg width="170" height="48" viewBox="0 0 170 48" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
                 <polyline points="22,20 38,8 54,20" fill="none" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
                 <text x="38" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
@@ -85,7 +85,7 @@ exports.handler = async (event) => {
           <!-- BODY -->
           <tr>
             <td class="body-cell" style="background-color:#ffffff !important; padding:40px 40px 32px;">
-              <h1 class="heading" style="font-family: Georgia, 'Times New Roman', serif; font-size:24px; color:#1B3A6B !important; margin:0 0 20px; font-weight:500; line-height:1.3;">Hi ${firstName},</h1>
+              <h1 class="heading" style="font-family: Georgia, 'Times New Roman', serif; font-size:15px; color:#1B3A6B !important; margin:0 0 20px; font-weight:500; line-height:1.8;">Hi ${firstName},</h1>
               <p class="body-text" style="font-size:15px; line-height:1.8; color:#2C2C2C !important; margin:0 0 18px;">${intro}</p>
               <p class="body-text" style="font-size:15px; line-height:1.8; color:#2C2C2C !important; margin:0 0 32px;">We review every enquiry personally and will be back in touch shortly. If anything is urgent, you can reach us directly by replying to this email.</p>
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -101,7 +101,7 @@ exports.handler = async (event) => {
  
           <!-- BOTTOM BAR -->
           <tr>
-            <td class="footer-cell" style="background-color:#F0F0EC !important; padding:18px 40px; border-radius:0 0 4px 4px; border-top:1px solid #E8E8E4;">
+            <td class="footer-cell" style="background-color:#F0F0EC !important; padding:18px 40px; border-top:1px solid #E8E8E4;">
               <p class="footer-text" style="font-size:11px; color:#8B8B8B !important; margin:0; text-align:center; line-height:1.6;">
                 VM Property Sourcing Ltd is registered with Companies House (No. 17304521) and the ICO (Ref: ZC183357).
               </p>
