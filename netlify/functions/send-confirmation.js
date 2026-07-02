@@ -86,8 +86,8 @@ exports.handler = async (event) => {
           <tr>
             <td class="body-cell" style="background-color:#ffffff !important; padding:40px 40px 32px;">
               <h1 class="heading" style="font-family: Georgia, 'Times New Roman', serif; font-size:15px; color:#1B3A6B !important; margin:0 0 20px; font-weight:500; line-height:1.8;">Hi ${firstName},</h1>
-              <p class="body-text" style="font-size:15px; line-height:1.8; color:#2C2C2C !important; margin:0 0 18px;">${intro}</p>
-              <p class="body-text" style="font-size:15px; line-height:1.8; color:#2C2C2C !important; margin:0 0 32px;">We review every enquiry personally and will be back in touch shortly. If anything is urgent, you can reach us directly by replying to this email.</p>
+              <p class="body-text" style="font-size:13px; line-height:1.8; color:#2C2C2C !important; margin:0 0 18px;">${intro}</p>
+              <p class="body-text" style="font-size:13px; line-height:1.8; color:#2C2C2C !important; margin:0 0 32px;">We review every enquiry personally and will be back in touch shortly. If anything is urgent, you can reach us directly by replying to this email.</p>
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr><td style="border-top:1px solid #E8E8E4; padding-bottom:24px; font-size:0;">&nbsp;</td></tr>
               </table>
