@@ -71,8 +71,8 @@ exports.handler = async (event) => {
                 <polyline points="22,20 38,8 54,20" fill="none" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
                 <text x="38" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
                 <line x1="70" y1="10" x2="70" y2="44" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="2.5">PROPERTY</text>
-                <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="2.5">SOURCING</text>
+                <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="3.5">PROPERTY</text>
+                <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="3.5">SOURCING</text>
               </svg>
             </td>
           </tr>
