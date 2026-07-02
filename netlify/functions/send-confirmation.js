@@ -1,4 +1,3 @@
-
 // netlify/functions/send-confirmation.js
 //
 // Triggered by Netlify Forms submission webhook.
