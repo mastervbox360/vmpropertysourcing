@@ -1068,28 +1068,28 @@
           <div class="form-row">
             <div class="form-group">
               <label style="color: rgba(255,255,255,0.6);">First Name</label>
-              <input type="text" placeholder="Alex" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+              <input type="text" name="first_name" placeholder="Alex" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
             </div>
             <div class="form-group">
               <label style="color: rgba(255,255,255,0.6);">Last Name</label>
-              <input type="text" placeholder="Patel" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+              <input type="text" name="last_name" placeholder="Patel" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
             </div>
           </div>
           <div class="form-group">
             <label style="color: rgba(255,255,255,0.6);">Business Name</label>
-            <input type="text" placeholder="Your sourcing business name" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+            <input type="text" name="business_name" placeholder="Your sourcing business name" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
           </div>
           <div class="form-group">
             <label style="color: rgba(255,255,255,0.6);">Email Address</label>
-            <input type="email" placeholder="alex@yourbusiness.co.uk" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+            <input type="email" name="email" placeholder="alex@yourbusiness.co.uk" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
           </div>
           <div class="form-group">
             <label style="color: rgba(255,255,255,0.6);">Phone Number</label>
-            <input type="tel" placeholder="07700 000000" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
+            <input type="tel" name="phone" placeholder="07700 000000" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);">
           </div>
           <div class="form-group">
             <label style="color: rgba(255,255,255,0.6);">How could we work together?</label>
-            <select required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);">
+            <select name="collaboration_type" required style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);">
               <option value="" disabled selected>Select one</option>
               <option>I have deals, need investor connections</option>
               <option>I have investors, need deal flow</option>
@@ -1099,7 +1099,7 @@
           </div>
           <div class="form-group">
             <label style="color: rgba(255,255,255,0.6);">Tell us more</label>
-            <textarea placeholder="Brief overview of your business, the areas you cover and what you are looking for — all treated in strict confidence." style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);"></textarea>
+            <textarea name="details" placeholder="Brief overview of your business, the areas you cover and what you are looking for — all treated in strict confidence." style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--white);"></textarea>
           </div>
           <button type="submit" class="form-submit" style="background: var(--gold); color: var(--navy-deep); width: 100%; padding: 14px; border: none; border-radius: 2px; font-family: Inter, sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em; cursor: pointer;">Express Interest</button>
           <div class="success-msg" id="partner-success" style="background: rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.3); color: #4ade80;">Thank you — we will be in touch within 48 hours.</div>
@@ -1132,24 +1132,24 @@
             <div class="form-row">
               <div class="form-group">
                 <label>First Name</label>
-                <input type="text" placeholder="James" required>
+                <input type="text" name="first_name" placeholder="James" required>
               </div>
               <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" placeholder="Wilson" required>
+                <input type="text" name="last_name" placeholder="Wilson" required>
               </div>
             </div>
             <div class="form-group">
               <label>Email Address</label>
-              <input type="email" placeholder="james@example.com" required>
+              <input type="email" name="email" placeholder="james@example.com" required>
             </div>
             <div class="form-group">
               <label>Phone Number</label>
-              <input type="tel" placeholder="07700 000000">
+              <input type="tel" name="phone" placeholder="07700 000000">
             </div>
             <div class="form-group">
               <label>Investment Strategy</label>
-              <select required>
+              <select name="strategy" required>
                 <option value="" disabled selected>What is your main strategy?</option>
                 <option>Buy-to-Let (BTL)</option>
                 <option>HMO</option>
@@ -1163,7 +1163,7 @@
             </div>
             <div class="form-group">
               <label>Budget Range</label>
-              <select required>
+              <select name="budget" required>
                 <option value="" disabled selected>What is your typical budget?</option>
                 <option>Under £100,000</option>
                 <option>£100,000 – £200,000</option>
@@ -1174,7 +1174,7 @@
             </div>
             <div class="form-group">
               <label>Preferred Regions</label>
-              <input type="text" placeholder="e.g. South Wales, Midlands, North West">
+              <input type="text" name="preferred_regions" placeholder="e.g. South Wales, Midlands, North West">
             </div>
             <button type="submit" class="form-submit investor-submit">Register as Investor</button>
             <div class="success-msg" id="investor-success">Thank you — we will be in touch shortly with relevant opportunities. While you wait, you can <a href="https://vmpropertysourcing.property-listings.co.uk/" target="_blank" rel="noopener" style="color: var(--gold); font-weight:600; text-decoration:underline;">browse a selection of current off-market opportunities &rarr;</a></div>
@@ -1195,28 +1195,28 @@
             <div class="form-row">
               <div class="form-group">
                 <label>First Name</label>
-                <input type="text" placeholder="Sarah" required>
+                <input type="text" name="first_name" placeholder="Sarah" required>
               </div>
               <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" placeholder="Thompson" required>
+                <input type="text" name="last_name" placeholder="Thompson" required>
               </div>
             </div>
             <div class="form-group">
               <label>Email Address</label>
-              <input type="email" placeholder="sarah@example.com" required>
+              <input type="email" name="email" placeholder="sarah@example.com" required>
             </div>
             <div class="form-group">
               <label>Phone Number</label>
-              <input type="tel" placeholder="07700 000000">
+              <input type="tel" name="phone" placeholder="07700 000000">
             </div>
             <div class="form-group">
               <label>Property Postcode</label>
-              <input type="text" placeholder="e.g. CF24 2LW">
+              <input type="text" name="postcode" placeholder="e.g. CF24 2LW">
             </div>
             <div class="form-group">
               <label>I am a</label>
-              <select required>
+              <select name="vendor_type" required>
                 <option value="" disabled selected>Select one</option>
                 <option>Homeowner looking to sell</option>
                 <option>Landlord looking to exit</option>
@@ -1227,7 +1227,7 @@
             </div>
             <div class="form-group">
               <label>Tell me about your situation</label>
-              <textarea placeholder="Brief description of the property and your circumstances — all enquiries are treated in strict confidence."></textarea>
+              <textarea name="situation" placeholder="Brief description of the property and your circumstances — all enquiries are treated in strict confidence."></textarea>
             </div>
             <button type="submit" class="form-submit vendor-submit">Submit Enquiry</button>
             <div class="success-msg" id="vendor-success">Thank you — Videet will be in touch within 24 hours.</div>
@@ -1311,12 +1311,7 @@
       body: new URLSearchParams(data).toString()
     })
     .then(() => {
-      const successEl = document.getElementById(type + '-success');
-      successEl.style.display = 'block';
-      form.reset();
-      if (type !== 'investor') {
-        setTimeout(() => { successEl.style.display = 'none'; }, 6000);
-      }
+      window.location.href = '/thank-you.html?from=' + type;
     })
     .catch((error) => {
       console.error('Form submission error:', error);
