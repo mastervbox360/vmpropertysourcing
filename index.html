@@ -1125,7 +1125,6 @@
         <div class="register-card-header investor">
           <h3>I'm an Investor</h3>
           <p>Register your criteria and we will contact you when a suitable off-market opportunity becomes available. No unsolicited calls, no bulk mailouts.</p>
-          <p style="margin-top:10px;"><a href="https://vmpropertysourcing.property-listings.co.uk/" target="_blank" rel="noopener" style="color: var(--gold); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold);">Browse current opportunities &rarr;</a></p>
         </div>
         <div class="register-card-body">
           <form id="investor-form" name="investor-registration" data-netlify="true" onsubmit="handleSubmit(event, 'investor')">
@@ -1178,7 +1177,7 @@
               <input type="text" placeholder="e.g. South Wales, Midlands, North West">
             </div>
             <button type="submit" class="form-submit investor-submit">Register as Investor</button>
-            <div class="success-msg" id="investor-success">Thank you — we will be in touch shortly with relevant opportunities.</div>
+            <div class="success-msg" id="investor-success">Thank you — we will be in touch shortly with relevant opportunities. While you wait, you can <a href="https://vmpropertysourcing.property-listings.co.uk/" target="_blank" rel="noopener" style="color: var(--gold); font-weight:600; text-decoration:underline;">browse a selection of current off-market opportunities &rarr;</a></div>
             <p class="form-note">Your details are held securely under our ICO registration (C1968586) and will only be used to match you with relevant deals. We do not share your information with third parties.</p>
           </form>
         </div>
@@ -1263,7 +1262,6 @@
           <li><a href="mailto:videet@vmpropertysourcing.co.uk">videet@vmpropertysourcing.co.uk</a></li>
           <li><a href="tel:07966325150">07966 325150</a></li>
           <li><span>Cardiff, Wales</span></li>
-          <li><a href="https://vmpropertysourcing.property-listings.co.uk/" target="_blank" rel="noopener">Current Opportunities</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1316,7 +1314,9 @@
       const successEl = document.getElementById(type + '-success');
       successEl.style.display = 'block';
       form.reset();
-      setTimeout(() => { successEl.style.display = 'none'; }, 6000);
+      if (type !== 'investor') {
+        setTimeout(() => { successEl.style.display = 'none'; }, 6000);
+      }
     })
     .catch((error) => {
       console.error('Form submission error:', error);
