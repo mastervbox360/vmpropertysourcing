@@ -3,23 +3,23 @@
 // Triggered by Netlify Forms submission webhook.
 // Sends a branded confirmation email to the person who submitted the form,
 // from enquiries@vmpropertysourcing.co.uk via Resend.
- 
+
 exports.handler = async (event) => {
   try {
     const payload = JSON.parse(event.body);
     const data = payload.payload?.data || payload.data || {};
- 
+
     const formName = payload.payload?.form_name || payload.form_name || '';
     const email = data.email;
-    const firstName = data.first_name || 'there';
- 
+    const firstName = data.first_name || data['first-name'] || 'there';
+
     if (!email) {
       return { statusCode: 200, body: 'No email field, skipping confirmation.' };
     }
- 
+
     let subject = 'Thank you for contacting VM Property Sourcing';
     let intro = `Thanks for getting in touch with VM Property Sourcing.`;
- 
+
     if (formName === 'investor-registration') {
       subject = 'Welcome — VM Property Sourcing Investor Registration';
       intro = `Thank you for registering as an investor with VM Property Sourcing. We have added your details and criteria to our system.`;
@@ -30,7 +30,7 @@ exports.handler = async (event) => {
       subject = 'Thank you for your interest in co-sourcing — VM Property Sourcing';
       intro = `Thank you for your interest in working with VM Property Sourcing on a co-sourcing basis. We have received your details.`;
     }
- 
+
     const html = `
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -63,7 +63,7 @@ exports.handler = async (event) => {
     <tr>
       <td align="center">
         <table width="580" cellpadding="0" cellspacing="0" border="0" style="max-width:580px; width:100%;">
- 
+
           <!-- HEADER -->
           <tr>
             <td class="header-cell" style="background-color:#1B3A6B !important; padding:18px 40px;">
@@ -76,12 +76,12 @@ exports.handler = async (event) => {
               </svg>
             </td>
           </tr>
- 
+
           <!-- GOLD ACCENT BAR -->
           <tr>
             <td class="gold-bar" style="background-color:#C9A84C !important; height:3px; font-size:0; line-height:0;">&nbsp;</td>
           </tr>
- 
+
           <!-- BODY -->
           <tr>
             <td class="body-cell" style="background-color:#ffffff !important; padding:40px 40px 32px;">
@@ -98,16 +98,16 @@ exports.handler = async (event) => {
               </p>
             </td>
           </tr>
- 
+
           <!-- BOTTOM BAR -->
           <tr>
             <td class="footer-cell" style="background-color:#F0F0EC !important; padding:18px 40px; border-top:1px solid #E8E8E4;">
               <p class="footer-text" style="font-size:11px; color:#8B8B8B !important; margin:0; text-align:center; line-height:1.6;">
-                VM Property Sourcing Ltd is registered with Companies House (No. 17304521) and the ICO (Ref: ZC183357).
+                VM Property Sourcing Ltd is registered with Companies House (No. 17304521) and the ICO (Ref: C1968586), and is a member of the Property Redress Scheme (PRS059603).
               </p>
             </td>
           </tr>
- 
+
         </table>
       </td>
     </tr>
@@ -115,7 +115,7 @@ exports.handler = async (event) => {
 </body>
 </html>
     `;
- 
+
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -130,18 +130,17 @@ exports.handler = async (event) => {
         html: html
       })
     });
- 
+
     if (!res.ok) {
       const errText = await res.text();
       console.error('Resend error:', errText);
       return { statusCode: 500, body: 'Failed to send email' };
     }
- 
+
     return { statusCode: 200, body: 'Confirmation email sent' };
- 
+
   } catch (err) {
     console.error('Function error:', err);
     return { statusCode: 500, body: 'Error processing submission' };
   }
 };
- 
