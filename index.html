@@ -734,6 +734,7 @@
     .services-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: 1fr; gap: 48px; }
     .register-grid { grid-template-columns: 1fr; }
+    #opportunities .section-inner { grid-template-columns: 1fr !important; gap: 40px !important; }
     .footer-top { grid-template-columns: 1fr; gap: 40px; }
     footer { padding: 48px 24px 32px; }
     .form-row { grid-template-columns: 1fr; }
@@ -761,6 +762,7 @@
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why VM</a></li>
+    <li><a href="#opportunities">Opportunities</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#partners">Co-Source</a></li>
     <li><a href="#register" class="nav-cta">Register Interest</a></li>
@@ -969,6 +971,29 @@
 </div>
 
 <!-- ABOUT -->
+<section id="opportunities" style="background: var(--navy-deep); padding: 100px 48px;">
+  <div class="section-inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <div>
+      <div class="section-eyebrow">Live Opportunities</div>
+      <h2 class="section-title" style="color: var(--white);">See what we're working on.</h2>
+      <p style="font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.75; font-weight: 300; margin-bottom: 28px;">Browse a live selection of off-market and sourced investment opportunities on our listings portal &mdash; real deals, real numbers, updated as they come through our pipeline.</p>
+      <p style="font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.75; font-weight: 300; margin-bottom: 36px;">And here's the part that matters: <span style="color: var(--gold);">our strongest deals rarely reach the portal.</span> Off-market opportunities are introduced to registered investors first, matched against their criteria &mdash; often before they're listed anywhere. The portal shows you how we work; registering puts you at the front of the queue.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="https://vmpropertysourcing.property-listings.co.uk/" target="_blank" rel="noopener" class="btn-secondary js-portal-link" style="border-color: rgba(201,168,76,0.5); color: var(--gold);">Browse the Portal &rarr;</a>
+        <a href="#register" class="btn-primary">Register as an Investor</a>
+      </div>
+    </div>
+    <div style="border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 44px 40px; background: rgba(255,255,255,0.03);">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--white); margin-bottom: 24px;">Why registered investors see more</h3>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; gap: 14px; align-items: flex-start;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 8px;"></div><p style="font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300;">Off-market introductions matched to your strategy, budget and preferred regions &mdash; before public listing.</p></div>
+        <div style="display: flex; gap: 14px; align-items: flex-start;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 8px;"></div><p style="font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300;">Full deal packs with sourced financial information, comparable evidence and documented due diligence.</p></div>
+        <div style="display: flex; gap: 14px; align-items: flex-start;"><div style="width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 8px;"></div><p style="font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300;">No unsolicited calls, no bulk mailouts &mdash; relevant opportunities only, fees payable on completion.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="about" style="background: var(--white); padding: 100px 48px;">
   <div class="section-inner">
     <div class="reveal">
@@ -1172,6 +1197,37 @@
                 <option>£500,000+</option>
               </select>
             </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Funding Position</label>
+                <select name="funding_position" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>Cash funds ready</option>
+                  <option>Mortgage agreed in principle</option>
+                  <option>Arranging finance</option>
+                  <option>Researching for now</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Purchase Timeline</label>
+                <select name="timeline" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>Ready to proceed now</option>
+                  <option>1&ndash;3 months</option>
+                  <option>3&ndash;6 months</option>
+                  <option>Just exploring</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Investment Experience</label>
+              <select name="experience">
+                <option value="" disabled selected>Select one (optional)</option>
+                <option>First investment property</option>
+                <option>1&ndash;3 properties owned</option>
+                <option>Growing portfolio (4+)</option>
+              </select>
+            </div>
             <div class="form-group">
               <label>Preferred Regions</label>
               <input type="text" name="preferred_regions" placeholder="e.g. South Wales, Midlands, North West">
@@ -1327,6 +1383,63 @@
       nav.style.padding = '20px 48px';
     }
   });
+</script>
+
+<!-- Hidden static form for Netlify build-time detection -->
+<form name="portal-access" data-netlify="true" hidden>
+  <input type="text" name="first_name"><input type="email" name="email">
+</form>
+
+<!-- Portal access modal -->
+<div id="portal-modal" style="display:none; position:fixed; inset:0; z-index:200; background:rgba(18,39,72,0.75); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:24px;">
+  <div style="background:var(--white); border-radius:4px; max-width:440px; width:100%; padding:40px 36px; position:relative; border-top:3px solid var(--gold);">
+    <button id="portal-modal-close" aria-label="Close" style="position:absolute; top:14px; right:16px; background:none; border:none; font-size:1.3rem; color:var(--mid-grey); cursor:pointer; line-height:1;">&times;</button>
+    <div class="section-eyebrow">Live Opportunities</div>
+    <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.5rem; font-weight:500; color:var(--navy); margin-bottom:10px; line-height:1.25;">Where should we send deals before they hit the portal?</h3>
+    <p style="font-size:0.875rem; color:var(--mid-grey); line-height:1.65; font-weight:300; margin-bottom:22px;">Our strongest opportunities go to our list first. Leave your details once and browse the portal freely.</p>
+    <form id="portal-access-form">
+      <div class="form-group"><input type="text" name="first_name" placeholder="First name" required></div>
+      <div class="form-group"><input type="email" name="email" placeholder="Email address" required></div>
+      <button type="submit" class="form-submit investor-submit">Continue to the Portal &rarr;</button>
+      <p style="font-size:0.72rem; color:var(--mid-grey); margin-top:12px; line-height:1.5; font-weight:300;">We’ll send you relevant property opportunities. No spam, unsubscribe anytime.</p>
+    </form>
+    <p style="text-align:center; margin-top:16px;"><a href="#" id="portal-skip" style="font-size:0.78rem; color:var(--mid-grey); text-decoration:underline; font-weight:300;">Just browsing &rarr;</a></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PORTAL = 'https://vmpropertysourcing.property-listings.co.uk/';
+  var modal = document.getElementById('portal-modal');
+  function hasPass(){ try { return localStorage.getItem('vm_portal_pass')==='1' || sessionStorage.getItem('vm_portal_skip')==='1'; } catch(e){ return true; } }
+  function openPortal(){ window.open(PORTAL, '_blank', 'noopener'); }
+  function show(){ modal.style.display='flex'; }
+  function hide(){ modal.style.display='none'; }
+
+  document.querySelectorAll('.js-portal-link').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (hasPass()) return; // normal behaviour, opens in new tab
+      e.preventDefault(); show();
+    });
+  });
+  document.getElementById('portal-modal-close').addEventListener('click', hide);
+  modal.addEventListener('click', function(e){ if (e.target===modal) hide(); });
+  document.getElementById('portal-skip').addEventListener('click', function(e){
+    e.preventDefault();
+    try { sessionStorage.setItem('vm_portal_skip','1'); } catch(err){}
+    hide(); openPortal();
+  });
+  document.getElementById('portal-access-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, data = new FormData(f);
+    data.append('form-name','portal-access');
+    fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
+      .finally(function(){
+        try { localStorage.setItem('vm_portal_pass','1'); } catch(err){}
+        hide(); openPortal();
+      });
+  });
+})();
 </script>
 </body>
 </html>

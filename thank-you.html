@@ -339,6 +339,7 @@
     if (from === 'investor') {
       document.getElementById('browse-btn').style.display = 'inline-block';
       document.getElementById('investor-note').style.display = 'block';
+      try { localStorage.setItem('vm_portal_pass','1'); } catch(e){}
     }
   })();
 </script>
