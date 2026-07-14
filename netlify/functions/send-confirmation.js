@@ -41,11 +41,11 @@ exports.handler = async (event) => {
   <meta name="supported-color-schemes" content="light">
   <style>
     :root { color-scheme: light; supported-color-schemes: light; }
-    body { margin: 0 !important; padding: 0 !important; background-color: #F8F8F5 !important; }
+    body { margin: 0 !important; padding: 0 !important; background-color: #EDECE6 !important; }
     * { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     @media (prefers-color-scheme: dark) {
       body { background-color: #F8F8F5 !important; }
-      .email-wrapper { background-color: #F8F8F5 !important; }
+      .email-wrapper { background-color: #EDECE6 !important; }
       .header-cell { background-color: #1B3A6B !important; }
       .gold-bar { background-color: #C9A84C !important; }
       .body-cell { background-color: #ffffff !important; }
@@ -59,10 +59,10 @@ exports.handler = async (event) => {
 </head>
 <body style="margin:0; padding:0; background-color:#F8F8F5; font-family: Arial, Helvetica, sans-serif;">
   <div style="display:none; max-height:0; overflow:hidden;">${subject} — VM Property Sourcing Ltd</div>
-  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F8F5; padding:0 0 40px 0; margin:0;">
+  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#EDECE6; padding:32px 0 40px 0; margin:0;">
     <tr>
       <td align="center">
-        <table width="580" cellpadding="0" cellspacing="0" border="0" style="max-width:580px; width:100%;">
+        <table width="640" cellpadding="0" cellspacing="0" border="0" style="max-width:640px; width:100%; border:1px solid #E2E1DA; border-radius:6px; overflow:hidden; box-shadow:0 2px 12px rgba(18,39,72,0.06);">
 
           <!-- HEADER -->
           <tr>
