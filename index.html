@@ -641,7 +641,8 @@
   }
 
   /* Column 1 — Brand */
-  .footer-logo-link { display: inline-flex; align-items: center; margin-bottom: 28px; }
+  .footer-logo-link { display: inline-flex; align-items: center; margin-bottom: 24px; transition: opacity 0.25s ease, transform 0.25s ease; }
+  .footer-logo-link:hover { opacity: 0.85; transform: translateY(-1px); }
 
   .footer-headline {
     font-family: 'Cormorant Garamond', serif;
@@ -655,44 +656,12 @@
 
   .footer-desc {
     font-size: 0.82rem;
-    color: rgba(255,255,255,0.42);
+    color: rgba(255,255,255,0.52);
     line-height: 1.75;
     font-weight: 300;
     max-width: 340px;
-    margin-bottom: 28px;
+    margin-bottom: 6px;
   }
-
-  .trust-badges {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-  }
-
-  .trust-badges li {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 0.7rem;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    color: rgba(255,255,255,0.55);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 7px 13px 7px 10px;
-    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-  }
-
-  .trust-badges li:hover {
-    background: rgba(201,168,76,0.08);
-    border-color: rgba(201,168,76,0.25);
-    transform: translateY(-1px);
-  }
-
-  .trust-badges svg { flex-shrink: 0; }
 
   /* Column headings shared */
   .footer-col h4 {
@@ -768,8 +737,10 @@
   }
 
   .reg-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.045);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 6px;
     padding: 10px 14px;
     transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
@@ -811,7 +782,7 @@
 
   .footer-legal {
     font-size: 0.72rem;
-    color: rgba(255,255,255,0.32);
+    color: rgba(255,255,255,0.4);
     line-height: 1.85;
     font-weight: 300;
     max-width: 700px;
@@ -843,7 +814,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .trust-badges li, .reg-card, .footer-links a, .footer-links a::after,
+    .reg-card, .footer-links a, .footer-links a::after,
     .footer-contact svg, .footer-contact a, .footer-meta a {
       transition: none !important;
     }
@@ -1460,12 +1431,6 @@
         </a>
         <h3 class="footer-headline">Off-Market Property Investment Opportunities</h3>
         <p class="footer-desc">We work directly with motivated vendors and landlords to source off-market opportunities, and present them to investors with full financial analysis.</p>
-        <ul class="trust-badges">
-          <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Companies House Registered</li>
-          <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>HMRC AML Supervised</li>
-          <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Property Redress Scheme</li>
-          <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>ICO Registered</li>
-        </ul>
       </div>
 
       <!-- Column 2: Quick Links -->
