@@ -154,7 +154,7 @@
     background-image:
       radial-gradient(ellipse 800px 400px at 15% 0%, rgba(201,168,76,0.06), transparent 60%),
       radial-gradient(ellipse 600px 400px at 100% 100%, rgba(255,255,255,0.03), transparent 60%);
-    padding: 96px 48px 40px;
+    padding: 72px 48px 40px;
     position: relative;
   }
 
@@ -165,9 +165,9 @@
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.4fr 0.85fr 0.9fr 1fr;
-    gap: 56px;
-    padding-bottom: 64px;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 56px;
   }
 
   /* Column 1 — Brand */
@@ -203,39 +203,7 @@
     margin-bottom: 22px;
   }
 
-  /* Column 2 — Quick Links */
-  .footer-links { list-style: none; margin: 0; padding: 0; }
-
-  .footer-links li { margin-bottom: 13px; }
-
-  .footer-links a {
-    position: relative;
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.55);
-    text-decoration: none;
-    transition: color 0.25s ease;
-    padding-bottom: 2px;
-  }
-
-  .footer-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-
-  .footer-links a:hover { color: var(--white); }
-  .footer-links a:hover::after { transform: scaleX(1); }
-
-  /* Column 3 — Contact */
+  /* Column 2 — Contact */
   .footer-contact { list-style: none; margin: 0; padding: 0; }
 
   .footer-contact li { margin-bottom: 16px; display: flex; align-items: center; gap: 11px; }
@@ -259,44 +227,20 @@
 
   .footer-contact a:hover { color: var(--white); }
 
-  /* Column 4 — Registered Details as cards */
-  .reg-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
+  /* Column 3 — Registered Details */
+  .footer-reg { list-style: none; margin: 0; padding: 0; }
 
-  .reg-card {
-    background: rgba(255,255,255,0.045);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 6px;
-    padding: 10px 14px;
-    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-  }
-
-  .reg-card:hover {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(201,168,76,0.22);
-    transform: translateY(-1px);
-  }
+  .footer-reg li { margin-bottom: 16px; font-size: 0.85rem; }
 
   .reg-label {
-    display: block;
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.01em;
     color: var(--gold);
-    margin-bottom: 3px;
   }
 
   .reg-value {
-    display: block;
-    font-size: 0.82rem;
-    font-weight: 400;
-    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
     letter-spacing: 0.01em;
   }
 
@@ -344,7 +288,6 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reg-card, .footer-links a, .footer-links a::after,
     .footer-contact svg, .footer-contact a, .footer-meta a {
       transition: none !important;
     }
@@ -430,19 +373,6 @@
         <p class="footer-desc">We work directly with motivated vendors and landlords to source off-market opportunities, and present them to investors with full financial analysis.</p>
       </div>
 
-      <!-- Column 2: Quick Links -->
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/#why">Why VM</a></li>
-          <li><a href="/#opportunities">Opportunities</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#partners">Co-Source</a></li>
-          <li><a href="/#register">Register Interest</a></li>
-        </ul>
-      </div>
-
       <!-- Column 3: Contact -->
       <div class="footer-col">
         <h4>Contact</h4>
@@ -462,15 +392,15 @@
         </ul>
       </div>
 
-      <!-- Column 4: Registered Details -->
+      <!-- Column 3: Registered Details -->
       <div class="footer-col">
         <h4>Registered Details</h4>
-        <div class="reg-cards">
-          <div class="reg-card"><span class="reg-label">Company No.</span><span class="reg-value">17304521</span></div>
-          <div class="reg-card"><span class="reg-label">HMRC AML</span><span class="reg-value">XBML00000222524</span></div>
-          <div class="reg-card"><span class="reg-label">PRS Membership</span><span class="reg-value">PRS059603</span></div>
-          <div class="reg-card"><span class="reg-label">ICO Reference</span><span class="reg-value">C1968586</span></div>
-        </div>
+        <ul class="footer-reg">
+          <li><span class="reg-label">Company No:</span> <span class="reg-value">17304521</span></li>
+          <li><span class="reg-label">HMRC AML:</span> <span class="reg-value">XBML00000222524</span></li>
+          <li><span class="reg-label">PRS:</span> <span class="reg-value">PRS059603</span></li>
+          <li><span class="reg-label">ICO Ref:</span> <span class="reg-value">C1968586</span></li>
+        </ul>
       </div>
 
     </div>
