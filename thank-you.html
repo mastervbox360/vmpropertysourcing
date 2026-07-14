@@ -163,12 +163,68 @@
     margin: 0 auto;
   }
 
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 64px;
-    padding-bottom: 56px;
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-bottom: 48px;
   }
+
+  .footer-brand { max-width: 340px; flex: 1 1 260px; }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-end;
+    flex: 1 1 420px;
+  }
+
+  .footer-info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 9px;
+  }
+
+  .footer-info-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+
+  .footer-info-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .footer-info-row .info-item {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    padding: 0 16px;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    line-height: 1.5;
+  }
+
+  .footer-info-row .info-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .footer-info-row .info-item a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  .footer-info-row .info-item a:hover { color: var(--white); }
 
   /* Column 1 — Brand */
   .footer-logo-link { display: inline-flex; align-items: center; margin-bottom: 24px; transition: opacity 0.25s ease, transform 0.25s ease; }
@@ -192,45 +248,6 @@
     max-width: 340px;
     margin-bottom: 6px;
   }
-
-  /* Column headings shared */
-  .footer-col h4 {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 22px;
-  }
-
-  /* Column 2 — Contact */
-  .footer-contact { list-style: none; margin: 0; padding: 0; }
-
-  .footer-contact li { margin-bottom: 16px; display: flex; align-items: center; gap: 11px; }
-
-  .footer-contact svg {
-    flex-shrink: 0;
-    stroke: var(--gold);
-    opacity: 0.85;
-    transition: transform 0.25s ease;
-  }
-
-  .footer-contact li:hover svg { transform: scale(1.12); }
-
-  .footer-contact a, .footer-contact span {
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.55);
-    text-decoration: none;
-    transition: color 0.25s ease;
-  }
-
-  .footer-contact a:hover { color: var(--white); }
-
-  /* Column 3 — Registered Details */
-  .footer-reg { list-style: none; margin: 0; padding: 0; }
-
-  .footer-reg li { margin-bottom: 16px; font-size: 0.85rem; }
 
   .reg-label {
     font-weight: 400;
@@ -265,30 +282,33 @@
 
   .footer-meta {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 16px;
     font-size: 0.75rem;
     color: rgba(255,255,255,0.3);
     font-weight: 300;
   }
 
-  .footer-meta a {
-    color: rgba(255,255,255,0.4);
+  .footer-copy { color: rgba(255,255,255,0.35); }
+
+  .footer-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+  }
+
+  .footer-nav-links a {
+    color: rgba(255,255,255,0.5);
     text-decoration: none;
     transition: color 0.25s ease;
   }
 
-  .footer-meta a:hover { color: var(--gold); }
-
-  .footer-meta-dot {
-    width: 3px; height: 3px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.25);
-  }
+  .footer-nav-links a:hover { color: var(--gold); }
 
   @media (prefers-reduced-motion: reduce) {
-    .footer-contact svg, .footer-contact a, .footer-meta a {
+    .footer-info-row .info-item a, .footer-meta a, .footer-nav-links a {
       transition: none !important;
     }
   }
@@ -296,12 +316,17 @@
   /* RESPONSIVE — FOOTER */
   @media (max-width: 900px) {
     .site-footer { padding: 64px 24px 32px; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px 32px; padding-bottom: 40px; }
+    .footer-top { flex-direction: column; align-items: flex-start; gap: 32px; padding-bottom: 32px; }
+    .footer-info { align-items: flex-start; width: 100%; }
+    .footer-info-block { align-items: flex-start; }
+    .footer-info-row { justify-content: flex-start; }
   }
 
   @media (max-width: 600px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
     .footer-headline, .footer-desc { max-width: 100%; }
+    .footer-info-row { flex-direction: column; gap: 8px; }
+    .footer-info-row .info-item { border-right: none; padding: 0; }
+    .footer-meta { flex-direction: column; align-items: flex-start; gap: 14px; }
   }
 
   /* RESPONSIVE */
@@ -356,10 +381,9 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-grid">
+    <div class="footer-top">
 
-      <!-- Column 1: Brand -->
-      <div>
+      <div class="footer-brand">
         <a href="/" class="footer-logo-link" aria-label="VM Property Sourcing — Home">
           <svg width="190" height="57" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <polyline points="24,24 42,8 60,24" fill="none" stroke="#C9A84C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -373,34 +397,24 @@
         <p class="footer-desc">We work directly with motivated vendors and landlords to source off-market opportunities, and present them to investors with full financial analysis.</p>
       </div>
 
-      <!-- Column 3: Contact -->
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul class="footer-contact">
-          <li>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
-            <a href="mailto:enquiries@vmpropertysourcing.co.uk">enquiries@vmpropertysourcing.co.uk</a>
-          </li>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <a href="tel:07966325150">07966 325150</a>
-          </li>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Cardiff, Wales</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Registered Details -->
-      <div class="footer-col">
-        <h4>Registered Details</h4>
-        <ul class="footer-reg">
-          <li><span class="reg-label">Company No:</span> <span class="reg-value">17304521</span></li>
-          <li><span class="reg-label">HMRC AML:</span> <span class="reg-value">XBML00000222524</span></li>
-          <li><span class="reg-label">PRS:</span> <span class="reg-value">PRS059603</span></li>
-          <li><span class="reg-label">ICO Ref:</span> <span class="reg-value">C1968586</span></li>
-        </ul>
+      <div class="footer-info">
+        <div class="footer-info-block">
+          <span class="footer-info-label">Contact</span>
+          <div class="footer-info-row">
+            <span class="info-item"><a href="mailto:enquiries@vmpropertysourcing.co.uk">enquiries@vmpropertysourcing.co.uk</a></span>
+            <span class="info-item"><a href="tel:07966325150">07966 325150</a></span>
+            <span class="info-item">Cardiff, Wales</span>
+          </div>
+        </div>
+        <div class="footer-info-block">
+          <span class="footer-info-label">Registered Details</span>
+          <div class="footer-info-row">
+            <span class="info-item"><span class="reg-label">Company No:</span> <span class="reg-value">17304521</span></span>
+            <span class="info-item"><span class="reg-label">HMRC AML:</span> <span class="reg-value">XBML00000222524</span></span>
+            <span class="info-item"><span class="reg-label">PRS:</span> <span class="reg-value">PRS059603</span></span>
+            <span class="info-item"><span class="reg-label">ICO Ref:</span> <span class="reg-value">C1968586</span></span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -410,9 +424,16 @@
     <div class="footer-bottom-new">
       <p class="footer-legal">VM Property Sourcing Ltd is registered with Companies House (No. 17304521) and the Information Commissioner's Office (ICO Ref: C1968586), is a member of the Property Redress Scheme (Membership No. PRS059603), and holds professional indemnity and public liability insurance underwritten by Accelerant Insurance UK Limited, and is registered with HMRC for Anti-Money Laundering supervision (Registration No. XBML00000222524). VM Property Sourcing Ltd acts as an introducer only and does not provide regulated financial advice. Property investment carries risk and past performance is not a guide to future returns. Sourcing fees are payable on legal completion only.</p>
       <div class="footer-meta">
-        <span>&copy; 2026 VM Property Sourcing Ltd. All rights reserved.</span>
-        <span class="footer-meta-dot"></span>
-        <a href="/complaints-procedure.html">Complaints Procedure</a>
+        <span class="footer-copy">&copy; 2026 VM Property Sourcing Ltd. All rights reserved.</span>
+        <nav class="footer-nav-links" aria-label="Footer">
+          <a href="/#services">Services</a>
+          <a href="/#why">Why VM</a>
+          <a href="/#opportunities">Opportunities</a>
+          <a href="/#about">About</a>
+          <a href="/#partners">Co-Source</a>
+          <a href="/#register">Register Interest</a>
+          <a href="/complaints-procedure.html">Complaints Procedure</a>
+        </nav>
       </div>
     </div>
   </div>
