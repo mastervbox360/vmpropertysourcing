@@ -41,11 +41,11 @@ exports.handler = async (event) => {
   <meta name="supported-color-schemes" content="light">
   <style>
     :root { color-scheme: light; supported-color-schemes: light; }
-    body { margin: 0 !important; padding: 0 !important; background-color: #EDECE6 !important; }
+    body { margin: 0 !important; padding: 0 !important; background-color: #F8F8F5 !important; }
     * { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     @media (prefers-color-scheme: dark) {
-      body { background-color: #EDECE6 !important; }
-      .email-wrapper { background-color: #EDECE6 !important; }
+      body { background-color: #F8F8F5 !important; }
+      .email-wrapper { background-color: #F8F8F5 !important; }
       .header-cell { background-color: #1B3A6B !important; }
       .gold-bar { background-color: #C9A84C !important; }
       .body-cell { background-color: #ffffff !important; }
@@ -57,28 +57,28 @@ exports.handler = async (event) => {
     }
   </style>
 </head>
-<body style="margin:0; padding:0; background-color:#EDECE6; font-family: Arial, Helvetica, sans-serif;">
+<body style="margin:0; padding:0; background-color:#F8F8F5; font-family: Arial, Helvetica, sans-serif;">
   <div style="display:none; max-height:0; overflow:hidden;">${subject} — VM Property Sourcing Ltd</div>
-  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#EDECE6; padding:32px 0 40px 0; margin:0;">
+  <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F8F5; padding:0 0 40px 0; margin:0;">
     <tr>
       <td align="center">
-        <table width="640" cellpadding="0" cellspacing="0" border="0" style="max-width:640px; width:100%; border:1px solid #E2E1DA;">
+        <table width="580" cellpadding="0" cellspacing="0" border="0" style="max-width:580px; width:100%;">
 
           <!-- HEADER -->
           <tr>
-            <td class="header-cell" bgcolor="#1B3A6B" style="background-color:#1B3A6B !important; background-image:linear-gradient(#1B3A6B,#1B3A6B) !important; padding:18px 40px;">
-              <img src="https://vmpropertysourcing.co.uk/images/email-logo.png?v=2" width="170" height="48" alt="VM Property Sourcing" style="display:block; border:0; outline:none; text-decoration:none; width:170px; height:48px;">
+            <td class="header-cell" style="background-color:#1B3A6B !important; padding:18px 40px;">
+              <img src="https://vmpropertysourcing.co.uk/images/email-logo.png" width="170" height="48" alt="VM Property Sourcing" style="display:block; border:0; outline:none; text-decoration:none; width:170px; height:48px;">
             </td>
           </tr>
 
           <!-- GOLD ACCENT BAR -->
           <tr>
-            <td class="gold-bar" bgcolor="#C9A84C" style="background-color:#C9A84C !important; background-image:linear-gradient(#C9A84C,#C9A84C) !important; height:3px; font-size:0; line-height:0;">&nbsp;</td>
+            <td class="gold-bar" style="background-color:#C9A84C !important; height:3px; font-size:0; line-height:0;">&nbsp;</td>
           </tr>
 
           <!-- BODY -->
           <tr>
-            <td class="body-cell" bgcolor="#ffffff" style="background-color:#ffffff !important; padding:40px 40px 32px;">
+            <td class="body-cell" style="background-color:#ffffff !important; padding:40px 40px 32px;">
               <h1 class="heading" style="font-family: Georgia, 'Times New Roman', serif; font-size:15px; color:#1B3A6B !important; margin:0 0 20px; font-weight:500; line-height:1.8;">Hi ${firstName},</h1>
               <p class="body-text" style="font-size:13px; line-height:1.8; color:#2C2C2C !important; margin:0 0 18px;">${intro}</p>
               <p class="body-text" style="font-size:13px; line-height:1.8; color:#2C2C2C !important; margin:0 0 32px;">We review every enquiry personally and will be back in touch shortly. If anything is urgent, you can reach us directly by replying to this email.</p>
@@ -95,7 +95,7 @@ exports.handler = async (event) => {
 
           <!-- BOTTOM BAR -->
           <tr>
-            <td class="footer-cell" bgcolor="#F0F0EC" style="background-color:#F0F0EC !important; background-image:linear-gradient(#F0F0EC,#F0F0EC) !important; padding:18px 40px; border-top:1px solid #E8E8E4;">
+            <td class="footer-cell" style="background-color:#F0F0EC !important; padding:18px 40px; border-top:1px solid #E8E8E4;">
               <p class="footer-text" style="font-size:11px; color:#8B8B8B !important; margin:0; text-align:center; line-height:1.6;">
                 VM Property Sourcing Ltd is registered with Companies House (No. 17304521) and the ICO (Ref: C1968586), and is a member of the Property Redress Scheme (PRS059603).
               </p>
