@@ -57,7 +57,7 @@ exports.handler = async (event) => {
     }
   </style>
 </head>
-<body style="margin:0; padding:0; background-color:#F8F8F5; font-family: Arial, Helvetica, sans-serif;">
+<body style="margin:0; padding:0; background-color:#EDECE6; font-family: Arial, Helvetica, sans-serif;">
   <div style="display:none; max-height:0; overflow:hidden;">${subject} — VM Property Sourcing Ltd</div>
   <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#EDECE6; padding:32px 0 40px 0; margin:0;">
     <tr>
@@ -67,7 +67,7 @@ exports.handler = async (event) => {
           <!-- HEADER -->
           <tr>
             <td class="header-cell" bgcolor="#1B3A6B" style="background-color:#1B3A6B !important; padding:18px 40px;">
-              <img src="https://vmpropertysourcing.co.uk/images/email-logo.png" width="170" height="48" alt="VM Property Sourcing" style="display:block; border:0; outline:none; text-decoration:none; width:170px; height:48px;">
+              <img src="https://vmpropertysourcing.co.uk/images/email-logo.png?v=2" width="170" height="48" alt="VM Property Sourcing" style="display:block; border:0; outline:none; text-decoration:none; width:170px; height:48px;">
             </td>
           </tr>
 
