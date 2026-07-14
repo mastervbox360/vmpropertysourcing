@@ -67,13 +67,7 @@ exports.handler = async (event) => {
           <!-- HEADER -->
           <tr>
             <td class="header-cell" style="background-color:#1B3A6B !important; padding:18px 40px;">
-              <svg width="170" height="48" viewBox="0 0 170 48" xmlns="http://www.w3.org/2000/svg" aria-label="VM Property Sourcing">
-                <polyline points="22,20 38,8 54,20" fill="none" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                <text x="38" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="300" fill="#FFFFFF" letter-spacing="1">VM</text>
-                <line x1="70" y1="10" x2="70" y2="44" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-                <text x="78" y="27" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="600" fill="#C9A84C" letter-spacing="3.5">PROPERTY</text>
-                <text x="78" y="39" text-anchor="start" font-family="Arial,sans-serif" font-size="7.5" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="3.5">SOURCING</text>
-              </svg>
+              <img src="https://vmpropertysourcing.co.uk/images/email-logo.png" width="170" height="48" alt="VM Property Sourcing" style="display:block; border:0; outline:none; text-decoration:none; width:170px; height:48px;">
             </td>
           </tr>
 
