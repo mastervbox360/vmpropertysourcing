@@ -23,3 +23,4 @@ export default async (request, context) => {
 };
 
 export const config = { path: "/deals/*" };
+// redeploy trigger: env vars fixed 2026-07-15T22:58:58Z
