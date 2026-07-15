@@ -240,7 +240,7 @@
   .footer-top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: stretch;
     gap: 48px;
     flex-wrap: wrap;
     padding-bottom: 48px;
@@ -251,6 +251,7 @@
   .footer-info {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 18px;
     align-items: flex-end;
     flex: 1 1 420px;
@@ -390,8 +391,8 @@
   /* RESPONSIVE — FOOTER */
   @media (max-width: 900px) {
     .site-footer { padding: 64px 24px 32px; }
-    .footer-top { flex-direction: column; align-items: flex-start; gap: 32px; padding-bottom: 32px; }
-    .footer-info { align-items: flex-start; width: 100%; }
+    .footer-top { flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; padding-bottom: 32px; }
+    .footer-info { justify-content: flex-start; align-items: flex-start; width: 100%; }
     .footer-info-block { align-items: flex-start; }
     .footer-info-row { justify-content: flex-start; }
   }
@@ -508,20 +509,20 @@
 
       <div class="footer-info">
         <div class="footer-info-block">
-          <span class="footer-info-label">Contact</span>
-          <div class="footer-info-row">
-            <span class="info-item"><a href="mailto:enquiries@vmpropertysourcing.co.uk">enquiries@vmpropertysourcing.co.uk</a></span>
-            <span class="info-item"><a href="tel:07966325150">07966 325150</a></span>
-            <span class="info-item">Cardiff, Wales</span>
-          </div>
-        </div>
-        <div class="footer-info-block">
           <span class="footer-info-label">Registered Details</span>
           <div class="footer-info-row">
             <span class="info-item"><span class="reg-label">Company No:</span> <span class="reg-value">17304521</span></span>
             <span class="info-item"><span class="reg-label">HMRC AML:</span> <span class="reg-value">XBML00000222524</span></span>
             <span class="info-item"><span class="reg-label">PRS:</span> <span class="reg-value">PRS059603</span></span>
             <span class="info-item"><span class="reg-label">ICO Ref:</span> <span class="reg-value">C1968586</span></span>
+          </div>
+        </div>
+        <div class="footer-info-block">
+          <span class="footer-info-label">Contact</span>
+          <div class="footer-info-row">
+            <span class="info-item"><a href="mailto:enquiries@vmpropertysourcing.co.uk">enquiries@vmpropertysourcing.co.uk</a></span>
+            <span class="info-item"><a href="tel:07966325150">07966 325150</a></span>
+            <span class="info-item">Cardiff, Wales</span>
           </div>
         </div>
       </div>
