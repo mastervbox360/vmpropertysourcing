@@ -190,6 +190,14 @@
     {src: "photos/bedroom1_2.jpg", caption: "Bedroom 1 - view 2"},
     {src: "photos/bedroom2.jpg", caption: "Bedroom 2"}
   ];
+
+  // Preload all photos in the background so lightbox navigation is instant,
+  // no waiting on network fetches when clicking next/prev.
+  photos.forEach(function (p) {
+    var preloadImg = new Image();
+    preloadImg.src = p.src;
+  });
+
   var current = 0;
   var overlay = document.getElementById('lightbox');
   var imgEl = document.getElementById('lightboxImg');
