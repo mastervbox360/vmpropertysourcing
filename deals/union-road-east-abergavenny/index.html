@@ -1,1 +1,237 @@
-c
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Union Road East, Abergavenny, NP7 &ndash; VM Property Sourcing</title>
+<style>
+  :root {
+    --navy: #1B3A6B;
+    --teal: #1D9E75;
+    --amber: #F59E0B;
+    --white: #FFFFFF;
+    --grey-band: #F5F6F8;
+    --line: #E8E8E4;
+    --ink: #2C2C2C;
+    --muted: #666666;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: #fff; }
+
+  /* Sticky white header - logo only, dark recolored variant for contrast on white */
+  .topbar { position: sticky; top: 0; z-index: 500; background: #fff; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); box-shadow: 0 1px 6px rgba(0,0,0,0.04); }
+  .topbar img { height: 58px; }
+  .topbar .tag { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* Hero photo - single large image with overlay "View All Photos" button */
+  .hero-wrap { position: relative; width: 100%; background: #000; }
+  .hero-wrap img { width: 100%; max-height: 560px; object-fit: cover; display: block; cursor: pointer; }
+  .view-all-btn { position: absolute; left: 24px; bottom: 24px; background: #fff; color: var(--ink); border: none; padding: 12px 22px; border-radius: 6px; font-size: 0.95rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+  .view-all-btn:hover { background: #f0f0f0; }
+
+  /* Full-width alternating bands, like the source listing */
+  .band { width: 100%; }
+  .band.white { background: var(--white); }
+  .band.grey { background: var(--grey-band); }
+  .band.navy { background: var(--navy); }
+  .band-inner { max-width: 820px; margin: 0 auto; padding: 36px 24px; }
+
+  .price-line { color: var(--muted); font-size: 0.9rem; font-style: italic; margin: 0 0 4px; }
+
+  h1 { font-size: 1.7rem; color: var(--navy); margin: 0 0 4px; }
+  .subaddress { color: var(--muted); font-size: 1rem; margin: 0 0 4px; }
+
+  h2 { font-size: 1.3rem; color: var(--navy); margin: 0 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--teal); display: inline-block; }
+  p { line-height: 1.65; font-size: 0.98rem; margin: 0 0 14px; }
+  p.bold-line { font-weight: 700; }
+
+  ul.features { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
+  ul.features li { position: relative; padding: 9px 0 9px 20px; font-size: 0.96rem; border-bottom: 1px solid var(--line); }
+  ul.features li::before { content: ""; position: absolute; left: 0; top: 17px; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+  @media (max-width: 560px) { ul.features { grid-template-columns: 1fr; } }
+
+  table.details { width: 100%; border-collapse: collapse; margin-top: 4px; }
+  table.details td { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+  table.details td:first-child { color: var(--muted); width: 40%; }
+  table.details td:last-child { font-weight: 600; color: var(--ink); }
+  .details-note { font-size: 0.8rem; color: var(--muted); margin-top: 10px; font-style: italic; }
+
+  .floorplan-thumb { width: 170px; border: 1px solid var(--line); border-radius: 6px; cursor: pointer; display: block; margin-bottom: 8px; }
+  .floorplan-link { color: var(--teal); font-size: 0.9rem; text-decoration: underline; cursor: pointer; background: none; border: none; padding: 0; font-family: inherit; }
+
+  .map-embed { width: 100%; height: 320px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+  .enquiry-box { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+  .enquiry-box .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+  .enquiry-box a.btn { display: inline-block; text-decoration: none; padding: 12px 22px; border-radius: 5px; font-weight: 600; }
+  .enquiry-box a.btn-email { background: var(--navy); color: #fff; }
+  .enquiry-box a.btn-whatsapp { background: #25D366; color: #fff; }
+  .enquiry-box a.btn svg { vertical-align: middle; margin-right: 8px; height: 16px; width: 16px; }
+
+  .band.navy .band-inner { color: #dfe6f0; }
+  .band.navy h2 { color: #fff; border-bottom-color: var(--amber); }
+  .band.navy .disclaimer-text { font-size: 0.8rem; line-height: 1.65; color: #b9c4d6; }
+  .band.navy footer-line { display:block; }
+  .footer-line { text-align: center; font-size: 0.78rem; color: #8fa0bc; padding-top: 18px; margin-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); }
+
+  /* Lightbox */
+  .lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(10,16,28,0.95); z-index: 1000; align-items: center; justify-content: center; flex-direction: column; padding: 20px; }
+  .lightbox-overlay.open { display: flex; }
+  .lightbox-overlay img { max-width: 100%; max-height: 78vh; border-radius: 4px; }
+  .lightbox-counter { color: #E2C97E; font-size: 0.8rem; margin-top: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .lightbox-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
+  .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: #fff; font-size: 1.6rem; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; }
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <img src="vm_logo_dark.png" alt="VM Property Sourcing">
+  <span class="tag">Confidential Listing</span>
+</div>
+
+<div class="hero-wrap">
+  <img id="heroImg" src="photos/gallery_01.jpg" alt="Union Road East, Abergavenny">
+  <button class="view-all-btn" id="viewAllBtn">View All Photos</button>
+</div>
+
+<div class="band white">
+  <div class="band-inner" style="padding-bottom: 8px;">
+    <p class="price-line">Price on Application &ndash; no asking price was published on the source listing at the time this pack was prepared. Contact VM Property Sourcing for current pricing.</p>
+    <h1>3 Bedroom Terraced House, Union Road East, Abergavenny, NP7</h1>
+    <p class="subaddress">Union Road East, Abergavenny, NP7</p>
+  </div>
+</div>
+
+<div class="band white">
+  <div class="band-inner">
+    <h2>Description</h2>
+    <p class="bold-line">Chain Free | Character Three Bedroom Home | Prime Abergavenny Location | Ideal for Homeowners &amp; Investors</p>
+    <p>Offered to the market with no onward chain, this charming three-bedroom terraced home combines character, generous living space and an excellent location, making it an attractive opportunity for homeowners and investors alike.</p>
+    <p>Situated on the ever-popular Union Road East, the property is just a short stroll from Abergavenny town centre, renowned for its independent cafes, restaurants, boutique shops and thriving community. Surrounded by the Brecon Beacons National Park, Abergavenny offers the perfect balance of vibrant market town living and beautiful countryside, making it one of South Wales' most desirable places to call home or place to visit.</p>
+    <p>Inside, the property is full of warmth and character, featuring a welcoming entrance hall, a bright bay-fronted lounge flooded with natural light, a spacious separate dining room ideal for entertaining or family living, a well-appointed kitchen with ample storage, and a convenient ground floor shower room. Upstairs offers three well-proportioned bedrooms, including two generous doubles, together with a separate WC.</p>
+    <p>Externally, the attractive traditional frontage and front garden create excellent kerb appeal while complementing the character of this home.</p>
+    <p>For investors, the location is particularly attractive for high rental demand, with Nevill Hall Hospital within walking distance, excellent transport links and consistently strong demand from professionals, hospital staff and families as well as opportunity for serviced accommodation (subject to own due diligence). For owner occupiers, this is a fantastic opportunity to enjoy a spacious home in a sought-after location with everything Abergavenny has to offer right on your doorstep.</p>
+    <p class="bold-line">Properties in this location are always in demand, so early enquiry is highly recommended.</p>
+    <p>EPC Rating: C</p>
+  </div>
+</div>
+
+<div class="band grey">
+  <div class="band-inner">
+    <h2>Key Features</h2>
+    <ul class="features">
+      <li>Walking distance to Abergavenny town centre and Nevill Hall Hospital</li>
+      <li>Chain-free</li>
+      <li>Three-bedroom terraced home</li>
+      <li>Ground floor shower room plus first-floor WC</li>
+      <li>Front garden</li>
+      <li>Two spacious reception rooms</li>
+    </ul>
+
+    <div style="margin-top: 30px;">
+      <h2>Property Details</h2>
+      <table class="details">
+        <tr><td>Property type</td><td>House</td></tr>
+        <tr><td>Property style</td><td>Terraced</td></tr>
+        <tr><td>Approx Sq Feet</td><td>829 sqft</td></tr>
+        <tr><td>Plot Sq Feet</td><td>1,044 sqft</td></tr>
+        <tr><td>Council Tax Band</td><td>C</td></tr>
+      </table>
+      <p class="details-note">Please note, property and plot sizes displayed are for guidance purposes only and may have been derived from publicly available information over which VM Property Sourcing Ltd has no control.</p>
+    </div>
+  </div>
+</div>
+
+<div class="band white">
+  <div class="band-inner">
+    <h2>Floorplans</h2>
+    <img class="floorplan-thumb" src="photos/aberg_19.jpg" alt="Floorplan" id="floorplanThumb">
+    <button class="floorplan-link" id="floorplanLink">View Floorplan</button>
+  </div>
+</div>
+
+<div class="band grey">
+  <div class="band-inner">
+    <h2>Location</h2>
+    <div class="map-embed">
+      <iframe src="https://maps.google.com/maps?q=Union+Road+East%2C+Abergavenny%2C+NP7&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="band white">
+  <div class="band-inner">
+    <h2>Book a Viewing / Enquiries</h2>
+    <div class="enquiry-box">
+      <p>To book a viewing for this property, please contact VM Property Sourcing Ltd.</p>
+      <div class="btn-row">
+        <a class="btn btn-email" href="mailto:enquiries@vmpropertysourcing.co.uk">Email enquiries@vmpropertysourcing.co.uk</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/447966325150?text=Hi%2C%20I%27m%20interested%20in%20Union%20Road%20East%2C%20Abergavenny%2C%20NP7" target="_blank" rel="noopener">WhatsApp 07966 325150</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band navy">
+  <div class="band-inner">
+    <h2>Disclaimer</h2>
+    <p class="disclaimer-text">Own due diligence advised. EPC Rating: C. The information displayed about this property comprises a property advertisement. VM Property Sourcing Ltd makes no warranty as to the accuracy or completeness of the advertisement or any linked or associated information. This property advertisement does not constitute property particulars. Figures are illustrative only, not a valuation or investment advice. Own due diligence advised prior to offer.</p>
+    <div class="footer-line">&copy; VM Property Sourcing Ltd &middot; Company No. 17304521 &middot; enquiries@vmpropertysourcing.co.uk</div>
+  </div>
+</div>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" id="lbClose">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lbNext">&#8250;</button>
+  <div class="lightbox-counter" id="lbCounter"></div>
+</div>
+
+<script>
+(function(){
+  var photos = [];
+  for (var i = 1; i <= 18; i++) {
+    var n = i < 10 ? "0" + i : i;
+    photos.push("photos/gallery_" + n + ".jpg");
+  }
+  var floorplanIndex = photos.length;
+  var allSlides = photos.concat(["photos/aberg_19.jpg"]);
+
+  document.getElementById('heroImg').addEventListener('click', function(){ openLightbox(0); });
+  document.getElementById('viewAllBtn').addEventListener('click', function(){ openLightbox(0); });
+  document.getElementById('floorplanThumb').addEventListener('click', function(){ openLightbox(floorplanIndex); });
+  document.getElementById('floorplanLink').addEventListener('click', function(){ openLightbox(floorplanIndex); });
+
+  var current = 0;
+  var overlay = document.getElementById('lightbox');
+  var imgEl = document.getElementById('lbImg');
+  var counterEl = document.getElementById('lbCounter');
+
+  function show(i){
+    current = (i + allSlides.length) % allSlides.length;
+    imgEl.src = allSlides[current];
+    counterEl.textContent = (current+1) + ' of ' + allSlides.length;
+  }
+  function openLightbox(i){ show(i); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLightbox(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', function(){ show(current-1); });
+  document.getElementById('lbNext').addEventListener('click', function(){ show(current+1); });
+  overlay.addEventListener('click', function(e){ if (e.target===overlay) closeLightbox(); });
+  document.addEventListener('keydown', function(e){
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') show(current-1);
+    if (e.key === 'ArrowRight') show(current+1);
+  });
+})();
+</script>
+</body>
+</html>
